@@ -1,0 +1,455 @@
+@font-face {
+  font-family: "Nunito";
+  src: url(Nunito-VariableFont_wght.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --glass-background: #a9e3d0b2;
+  --background: #a9e3d0;
+  --page-color: #f8fbfd;
+  --scroll-bar-color: #0f6e56;
+  --hover-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito";
+  /* user-select: none; */
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: #e9e9ed;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar-color);
+  border-radius: 10px;
+}
+*::selection {
+  color: white;
+  background-color: #39a07e;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: clip;
+}
+
+/* ---- Subscription Page ---- */
+#subscription-main {
+  min-height: calc(100vh - 10vh);
+  width: 100%;
+  background: var(--page-color);
+}
+
+/* ---- Hero ---- */
+.sub-hero {
+  background: #1a1a2e;
+  padding: 4rem 2rem 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sub-hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(
+    circle,
+    rgba(169, 227, 208, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sub-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(
+    circle,
+    rgba(125, 173, 157, 0.07) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sub-hero-label {
+  display: inline-flex;
+  background: rgba(169, 227, 208, 0.12);
+  color: #a9e3d0;
+  border: 1px solid rgba(169, 227, 208, 0.25);
+  padding: 0.35rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.2rem;
+}
+
+.sub-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: white;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+.sub-hero h1 span {
+  color: #a9e3d0;
+}
+
+.sub-hero p {
+  font-size: 1.02rem;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+/* ---- Plans Section ---- */
+.sub-plans-section {
+  padding: 5rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.sub-section-title {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.sub-section-title h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: #1a1a2e;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.8rem;
+}
+
+.sub-section-title h2 span {
+  color: #0f6e56;
+}
+
+.sub-section-line {
+  width: 60px;
+  height: 4px;
+  background: #0f6e56;
+  border-radius: 2px;
+  margin: 0 auto 1rem;
+}
+
+.sub-section-title p {
+  font-size: 0.95rem;
+  color: #5a6278;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* ---- Plan Cards Grid ---- */
+.subscription-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* ---- Individual Plan Card ---- */
+.subscription-card {
+  background: white;
+  border: 1.5px solid #e8edf2;
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.subscription-card.popular {
+  border-color: #0f6e56;
+  box-shadow: 0 8px 32px rgba(125, 173, 157, 0.18);
+}
+
+.subscription-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(125, 173, 157, 0.16);
+  border-color: #a9e3d0;
+}
+
+/* Popular badge */
+.popular-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #0f6e56;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+}
+
+/* Card Top */
+.sub-card-top {
+  padding: 2rem 2rem 1.4rem;
+  border-bottom: 1px solid #f0f3f5;
+}
+
+.sub-card-icon {
+  width: 52px;
+  height: 52px;
+  background: #f3faf7;
+  border: 1.5px solid #d4ede5;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.subscription-card:hover .sub-card-icon {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.sub-card-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.3px;
+}
+
+.sub-card-desc {
+  font-size: 0.88rem;
+  color: #5a6278;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Price Block */
+.sub-card-price {
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  background: #f8fbfd;
+  border-bottom: 1px solid #f0f3f5;
+}
+
+.sub-price-currency {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f6e56;
+}
+
+.sub-price-amount {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.sub-price-period {
+  font-size: 0.82rem;
+  color: #8890a4;
+  font-weight: 600;
+  margin-left: 0.2rem;
+}
+
+/* Features List */
+.sub-card-features {
+  padding: 1.5rem 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sub-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.88rem;
+  color: #3a4060;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.sub-feature-tick {
+  width: 18px;
+  height: 18px;
+  background: #a9e3d0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: #1a1a2e;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-weight: 800;
+}
+
+/* CTA Button */
+.sub-card-cta {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.sub-join-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: #0f6e56;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  font-family: "Nunito";
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(125, 173, 157, 0.25);
+  letter-spacing: 0.3px;
+}
+
+.sub-join-btn:hover {
+  background: #6b9e8f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(125, 173, 157, 0.38);
+}
+
+/* ---- Guarantee Strip ---- */
+.sub-guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: #f3faf7;
+  border: 1.5px solid #d4ede5;
+  border-radius: 18px;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: #3a4060;
+  font-weight: 700;
+}
+
+.guarantee-icon {
+  font-size: 1.2rem;
+}
+
+/* ---- FAQ ---- */
+.sub-faq {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 0 5rem;
+}
+
+.sub-faq h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.sub-faq-line {
+  width: 50px;
+  height: 4px;
+  background: #0f6e56;
+  border-radius: 2px;
+  margin: 0 auto 2.5rem;
+}
+
+.faq-item {
+  border: 1.5px solid #e8edf2;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: white;
+  transition: border-color 0.25s ease;
+}
+
+.faq-item:hover {
+  border-color: #a9e3d0;
+}
+
+.faq-question {
+  padding: 1.2rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+  background: #f8fbfd;
+}
+
+.faq-arrow {
+  font-size: 0.75rem;
+  color: #0f6e56;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.2rem;
+  font-size: 0.9rem;
+  color: #5a6278;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .sub-plans-section {
+    padding: 3rem 1rem;
+  }
+  .subscription-cards {
+    gap: 1.3rem;
+  }
+  .sub-guarantee {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .sub-faq {
+    padding: 0 0 3rem;
+  }
+}

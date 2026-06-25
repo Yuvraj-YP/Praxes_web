@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Free Demo — Praxes</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="book-a-demo.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    <header id="header">
+      <section id="logo">
+        <img src="logo1.png" alt="Praxes Logo" />
+        <div class="logo-name">
+          <a href="index.html">
+            <h3>PRAXES</h3>
+            <h5>Practice. Test.</h5>
+            <h5>Mentor. Succeed.</h5>
+          </a>
+        </div>
+      </section>
+      <div class="menu-container">
+        <div class="menu-open-close">
+          <img class="menuImg" src="menu.svg" alt="menu" onclick="event.preventDefault()" />
+        </div>
+        <section id="mobile-menu">
+          <div id="user-nav-block-mobile" class="auth-hidden" style="width: 100%;">
+            <div class="mobile-profile-header">
+              <div class="profile-trigger" style="cursor: default;">👤</div>
+              <span style="font-weight: 700; color: #2d3748; font-size: 0.95rem;">My Dashboard</span>
+            </div>
+            <a href="progressTracking.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📊 Progress Tracking</button></a>
+            <a href="Badges.html"><button class="btn">📛 My Badges</button></a>
+            <a href="feedback.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">💬 Send Feedback</button></a>
+            <button class="btn logout-item" onclick="simulateLogout()" style="text-align: left; padding-left: 1.5rem; width: 100%; font-weight: 700;">🚪 Log Out</button>
+            <div class="dropdown-divider" style="margin: 0.5rem 0;"></div>
+          </div>
+          <div id="guest-nav-block-mobile" style="width: 100%; display: flex; flex-direction: column;">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn active">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+        </section>
+        <section id="menu">
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn active">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+          <div id="guest-nav-block">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+          <div id="user-nav-block" class="profile-wrapper auth-hidden">
+            <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
+            <div class="dropdown-menu" id="profileDropdownCard">
+              <a href="progressTracking.html" class="dropdown-item">📊 Progress Tracking</a>
+              <a href="Badges.html" class="dropdown-item">📛 My Badges</a>
+              <a href="feedback.html" class="dropdown-item">💬 Send Feedback</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="demo-page-container">
+        <div class="demo-card-frame">
+          <h2>Book a Free Demo Lesson</h2>
+          <p class="subtitle">Complete the scheduling parameters below to lock down your reservation.</p>
+          
+          <form id="standaloneDemoForm">
+            <div class="demo-grid-system">
+              
+              <div class="form-input-group">
+                <label for="studentName">Student Full Name</label>
+                <input type="text" id="studentName" placeholder="Enter student's name" required />
+              </div>
+              
+              <div class="form-input-group">
+                <label for="tutorName">Assigned Faculty Member</label>
+                <input type="text" id="tutorName" readonly />
+              </div>
+
+              <div class="form-input-group">
+                <label for="studentClass">Class / Academic Standard</label>
+                <select id="studentClass" required>
+                  <option value="" disabled selected>Select class tier</option>
+                  <option value="Class VI">Class VI</option>
+                  <option value="Class VII">Class VII</option>
+                  <option value="Class VIII">Class VIII</option>
+                  <option value="Class IX">Class IX</option>
+                  <option value="Class X">Class X</option>
+                  <option value="Class XI">Class XI</option>
+                  <option value="Class XII">Class XII</option>
+                </select>
+              </div>
+
+              <div class="form-input-group">
+                <label for="demoDate">Preferred Date</label>
+                <input type="date" id="demoDate" required />
+              </div>
+
+              <div class="form-input-group">
+                <label for="preferredTime">Preferred Slot Time</label>
+                <input type="text" id="preferredTime" placeholder="e.g., 5:00 PM - 6:00 PM" required />
+              </div>
+
+              <div class="form-input-group">
+                <label for="demoSubject">Target Topic / Subject</label>
+                <input type="text" id="demoSubject" placeholder="e.g., Mathematics, Physics" required />
+              </div>
+
+              <div class="form-input-group">
+                <label for="studentPhone">Contact Mobile Number</label>
+                <input type="tel" id="studentPhone" placeholder="Enter 10-digit number" required />
+              </div>
+
+              <div class="form-input-group">
+                <label for="studentEmail">Email Address</label>
+                <input type="email" id="studentEmail" placeholder="name@example.com" required />
+              </div>
+
+            </div>
+
+            <button type="button" class="form-submit-trigger" onclick="executeDemoBooking()">Confirm Reservation</button>
+          </form>
+
+          <div class="firm-alert-box" id="successFirmCard">
+            <div class="alert-icon-circle">✓</div>
+            <div class="alert-text-payload" id="successFirmMessageBody">
+              Success! Demo booking validation query captured.
+            </div>
+            <a href="onlineTutor_Team.html" style="width: 100%; display: flex; justify-content: center; text-decoration: none;">
+              <button type="button" class="alert-dismiss-btn">Return to Team</button>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <div class="contacts">
+          <div class="contact-details"><img src="phone.svg" alt="" /><div class="contact"><h4 class="contact-title">Phone</h4><h5>+91 62602 03132</h5></div></div>
+          <div class="contact-details"><img src="mail.svg" alt="" /><div class="contact"><h4 class="contact-title">Email</h4><h5>praxes24@gmail.com</h5></div></div>
+          <div class="contact-details"><img src="map.svg" alt="" /><div class="contact"><h4 class="contact-title">Address</h4><h5>1st floor, Srishti's Palazzo commercial complex, St. Xavier School Road, Raipur, Chhattisgarh</h5></div></div>
+        </div>
+      </div>
+      <div class="social-platforms">
+        <h3>Our Platforms</h3>
+        <div class="platform"><img src="Facebook.svg" alt="" /><h4>Facebook</h4></div>
+        <div class="platform"><img src="instagram.svg" alt="" /><h4>Instagram</h4></div>
+        <div class="platform"><img src="LinkedIn.svg" alt="" /><h4>LinkedIn</h4></div>
+      </div>
+      <div class="what-offer">
+        <h3>Important Links</h3>
+        <div class="offers">
+          <a href="disclaimer"><h4>Disclaimer</h4></a>
+          <a href="privacy"><h4>Privacy</h4></a>
+          <a href="refund_policy"><h4>Refund Policy</h4></a>
+          <a href="terms_and_condition"><h4>Terms and Conditions</h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" ></script>
+    <script src="script.js"></script>
+    <script>
+        // Automatically run setup actions when page initializes
+        window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const instructor = urlParams.get('teacher');
+        
+        if (instructor) {
+            document.getElementById('tutorName').value = decodeURIComponent(instructor);
+        } else {
+            document.getElementById('tutorName').value = "General Consultation Pool";
+        }
+
+        const datePicker = document.getElementById('demoDate');
+        const todayTimestamp = new Date().toISOString().split('T')[0];
+        datePicker.value = todayTimestamp;
+        datePicker.min = todayTimestamp;
+
+        // Clear red error states on-the-fly as user types
+        const inputElements = document.querySelectorAll('.form-input-group input, .form-input-group select');
+        inputElements.forEach(element => {
+            element.addEventListener('input', () => {
+            const parentGroup = element.closest('.form-input-group');
+            if (parentGroup.classList.contains('error-state')) {
+                parentGroup.classList.remove('error-state');
+                const existingError = parentGroup.querySelector('.error-message-label');
+                if (existingError) existingError.remove();
+            }
+            });
+        });
+        });
+
+        function executeDemoBooking() {
+        const formFields = [
+            { id: 'studentName', label: 'Student Full Name' },
+            { id: 'studentClass', label: 'Class Tier' },
+            { id: 'demoDate', label: 'Preferred Date' },
+            { id: 'preferredTime', label: 'Preferred Slot Time' },
+            { id: 'demoSubject', label: 'Target Topic / Subject' },
+            { id: 'studentPhone', label: 'Contact Mobile Number' },
+            { id: 'studentEmail', label: 'Email Address' }
+        ];
+
+        let isFormValid = true;
+
+        formFields.forEach(field => {
+            const inputElement = document.getElementById(field.id);
+            const parentGroup = inputElement.closest('.form-input-group');
+            
+            // Remove old error flags before validation cycle runs
+            parentGroup.classList.remove('error-state');
+            const oldError = parentGroup.querySelector('.error-message-label');
+            if (oldError) oldError.remove();
+
+            // Check value presence
+            if (!inputElement.value || inputElement.value.trim() === "") {
+            isFormValid = false;
+            parentGroup.classList.add('error-state');
+            
+            // Inject the required feedback label cleanly below the input box
+            const errorLabel = document.createElement('span');
+            errorLabel.className = 'error-message-label';
+            errorLabel.innerText = `⚠️ ${field.label} is required`;
+            parentGroup.appendChild(errorLabel);
+            }
+        });
+
+        // Intercept form completion sequence if validation check breaks
+        if (!isFormValid) {
+            // Smoothly scroll the first missing element into screen focus range
+            const firstErrorField = document.querySelector('.form-input-group.error-state');
+            if (firstErrorField) {
+            firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
+
+        // --- Proceed with success popup display execution if all parameters match ---
+        const studentName = document.getElementById('studentName').value;
+        const teacherValue = document.getElementById('tutorName').value;
+        const dateValue = document.getElementById('demoDate').value;
+
+        const standardDateFormat = new Date(dateValue).toLocaleDateString('en-US', {
+            day: 'numeric', month: 'long', year: 'numeric'
+        });
+
+        const injectionString = `Success! Free demo session booked for <strong>${studentName}</strong> under the mentorship of <strong>${teacherValue}</strong> on <strong>${standardDateFormat}</strong>. Our team will reach you shortly.`;
+        document.getElementById('successFirmMessageBody').innerHTML = injectionString;
+
+        document.getElementById('successFirmCard').style.display = 'flex';
+        }
+    </script>
+  </body>
+</html>

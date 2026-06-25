@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praxes — About Us</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <section id="logo">
+        <img src="logo1.png" alt="Praxes Logo" />
+        <div class="logo-name">
+          <a href="index.html">
+            <h3>PRAXES</h3>
+            <h5>Practice. Test.</h5>
+            <h5>Mentor. Succeed.</h5>
+          </a>
+        </div>
+      </section>
+      <div class="menu-container">
+        <div class="menu-open-close">
+          <img
+            class="menuImg"
+            src="menu.svg"
+            alt="menu"
+            onclick="event.preventDefault()"
+          />
+        </div>
+        
+        <section id="mobile-menu">
+          <div id="user-nav-block-mobile" class="auth-hidden" style="width: 100%;">
+            <div class="mobile-profile-header">
+              <div class="profile-trigger" style="cursor: default;">👤</div>
+              <span style="font-weight: 700; color: #2d3748; font-size: 0.95rem;">My Dashboard</span>
+            </div>
+            <a href="progressTracking.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📊 Progress Tracking</button></a>
+            <a href="Badges.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📛 My Badges</button></a>
+            <a href="feedback.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">💬 Send Feedback</button></a>
+            <button class="btn logout-item" onclick="simulateLogout()" style="text-align: left; padding-left: 1.5rem; width: 100%; font-weight: 700;">🚪 Log Out</button>
+            <div class="dropdown-divider" style="margin: 0.5rem 0;"></div>
+          </div>
+
+          <div id="guest-nav-block-mobile" style="width: 100%; display: flex; flex-direction: column;">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn active">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+        </section>
+
+        <section id="menu">
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn active">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+          
+          <div id="guest-nav-block">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <div id="user-nav-block" class="profile-wrapper auth-hidden">
+            <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
+            <div class="dropdown-menu" id="profileDropdownCard">
+              <a href="progressTracking.html" class="dropdown-item">📊 Progress Tracking</a>
+              <a href="Badges.html" class="dropdown-item">📛 My Badges</a>
+              <a href="feedback.html" class="dropdown-item">💬 Send Feedback</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main id="about-main">
+      <div class="about-hero">
+        <div class="about-hero-label">Our Story</div>
+        <h1>About <span>Praxes</span></h1>
+        <p>
+          We believe every student deserves the right environment to grow — one
+          built on consistent practice, clear feedback, and genuine support.
+        </p>
+      </div>
+
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="about-stat-num">10K+</span>
+          <span class="about-stat-label">Practice Questions</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">Class I–X</span>
+          <span class="about-stat-label">Full Coverage</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">3</span>
+          <span class="about-stat-label">Core Subjects</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">500+</span>
+          <span class="about-stat-label">Happy Students</span>
+        </div>
+      </div>
+
+      <div class="about-mission">
+        <span class="about-section-label">Our Mission</span>
+        <h2>Why We Built <span>Praxes</span></h2>
+        <div class="about-underline"></div>
+        <p>
+          Practice is the key to perfection. When students practice regularly,
+          they improve their skills, understand concepts better, and gain
+          confidence. Each attempt helps them identify and fix mistakes, turning
+          challenges into strengths. Repetition strengthens memory and builds
+          problem-solving abilities, making even difficult tasks easier over
+          time. Practice also teaches discipline and patience — qualities
+          essential for success in every field.
+          <br /><br />
+          Praxes was built on this belief. We wanted to create a platform where
+          every student — regardless of background — could access structured,
+          effective, and affordable practice material. From Class I to Class X,
+          across Maths, Science, and English, Praxes offers topic-wise content,
+          unlimited tests, instant answers, and personalised mentorship. We are
+          not just an app — we are a commitment to every student's potential.
+        </p>
+
+        <div class="about-values">
+          <div class="value-card">
+            <span class="value-icon">🎯</span>
+            <h3>Focused Practice</h3>
+            <p>
+              Short, structured sessions that target specific topics — building
+              depth without overwhelming students.
+            </p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">⚡</span>
+            <h3>Instant Feedback</h3>
+            <p>
+              Answers are shown right after every attempt so students can
+              correct mistakes while the context is still fresh.
+            </p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">📊</span>
+            <h3>Progress Visibility</h3>
+            <p>
+              Clear, honest performance data — for students, parents, and
+              teachers — so everyone stays informed and aligned.
+            </p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">⭐</span>
+            <h3>Accessible to All</h3>
+            <p>
+              Affordable plans, simple interface, and support in regional
+              languages make Praxes genuinely inclusive.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-contact">
+        <h2>Want to Know More?</h2>
+        <p>
+          Reach out to us — we'd love to hear from students, parents, and
+          institutions.
+        </p>
+        <a class="about-contact-btn" href="mailto:praxes24@gmail.com">✉️&nbsp; praxes24@gmail.com</a>
+      </div>
+    </main>
+
+    <div id="mentorModalOverlay" class="mentor-modal-overlay">
+      <div class="mentor-modal-card">
+        <button class="mentor-modal-close" onclick="dismissMentorModal()">&times;</button>
+        <h2>Select Your Learning Format</h2>
+        <p>Choose how you would like to connect with your expert Praxes mentor to start your customized educational track:</p>
+        <div class="mentor-modal-options">
+          <a href="Y:\mentorHub\student_form.html"  class="mentor-option-btn offline-accent" target="_blank" rel="noopener noreferrer">
+            <span class="option-icon">🏫</span>
+            <div class="option-text">
+              <h4>Offline Mentorship</h4>
+              <p>Connect via MentorHub</p>
+            </div>
+          </a>
+          <a href="onlineTutor_Team.html" class="mentor-option-btn online-accent">
+            <span class="option-icon">💻</span>
+            <div class="option-text">
+              <h4>Online Mentorship</h4>
+              <p>Meet our Online Tutor Team</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="persistentMentorBar" class="persistent-mentor-bar">
+      <div class="floating-bar-content">
+        <span class="bar-title-hint">💡 Need a Mentor?</span>
+        <div class="bar-actions">
+          <a href="Y:\mentorHub\student_form.html" class="bar-btn offline-bar-btn" target="_blank" rel="noopener noreferrer">Offline (MentorHub)</a>
+          <a href="onlineTutor_Team.html" class="bar-btn online-bar-btn">Online (OnlineTutor)</a>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <div class="contacts">
+          <div class="contact-details">
+            <img src="phone.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Phone</h4>
+              <h5>+91 62602 03132</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="mail.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Email</h4>
+              <h5>praxes24@gmail.com</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="map.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Address</h4>
+              <h5>
+                1st floor, Srishti's Palazzo commercial complex, St. Xavier
+                School Road, Raipur, Chhattisgarh
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-platforms">
+        <h3>Our Platforms</h3>
+        <div class="platform">
+          <img src="Facebook.svg" alt="" />
+          <h4>Facebook</h4>
+        </div>
+        <div class="platform">
+          <img src="instagram.svg" alt="" />
+          <h4>Instagram</h4>
+        </div>
+        <div class="platform">
+          <img src="LinkedIn.svg" alt="" />
+          <h4>LinkedIn</h4>
+        </div>
+      </div>
+      <div class="what-offer">
+        <h3>Important Links</h3>
+        <div class="offers">
+          <a href="disclaimer"><h4>Disclaimer</h4></a>
+          <a href="privacy"><h4>Privacy</h4></a>
+          <a href="refund_policy"><h4>Refund Policy</h4></a>
+          <a href="terms_and_condition"><h4>Terms and Conditions</h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Automatically inject overlay visibility rules upon execution
+        const overlay = document.getElementById("mentorModalOverlay");
+        if (overlay) {
+          overlay.classList.add("modal-active");
+        }
+
+        // Close modal automatically if user clicks on the safe surrounding backdrop filter
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) {
+            dismissMentorModal();
+          }
+        });
+      });
+
+      function dismissMentorModal() {
+        const overlay = document.getElementById("mentorModalOverlay");
+        if (overlay) {
+          overlay.classList.remove("modal-active");
+        }
+        // Seamlessly slide up the continuous secondary bar context
+        const persistentBar = document.getElementById("persistentMentorBar");
+        if (persistentBar) {
+          persistentBar.classList.add("bar-visible");
+        }
+      }
+    </script>
+  </body>
+</html>

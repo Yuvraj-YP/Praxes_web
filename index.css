@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Praxes Hero Landing Entry Animation Suite
+   ========================================================================== */
+
+/* --- Left Side Content Sequencing --- */
+
+/* Welcome Badge Reveal */
+@font-face {
+  font-family: "Nunito";
+  src: url(Nunito-VariableFont_wght.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hero__badge {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: heroTextReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+/* Core Mission Heading */
+.hero__title {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.4s;
+}
+
+/* Subtitle Description Body Paragraph */
+.hero__subtitle {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: heroTextReveal 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* --- Call To Action Buttons Staging --- */
+
+.hero__actions .cta-btn {
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+  animation: heroButtonPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Stagger button entry appearances */
+.hero__actions .cta-btn.primary {
+  animation-delay: 0.9s;
+}
+
+.hero__actions .cta-btn.secondary {
+  animation-delay: 1.05s;
+}
+
+/* --- Right Side Bulb Vector Assembly & Ignition --- */
+
+.hero__visual img {
+  opacity: 0.5;
+  transform: scale(.001) rotate(-10deg);
+  filter: drop-shadow(0 0 0 rgba(49, 151, 149, 0));
+  animation: 
+    bulbAssemble 1s cubic-bezier(0.25, 1, 0.5, 1) forwards,
+    bulbGlowPulse 3s ease-in-out infinite alternate;
+  animation-delay: 0.3s, 1.3s; /* Glow starts right after full assembly */
+}
+
+/* ==========================================================================
+   Animation Keyframe Chronologies
+   ========================================================================== */
+
+/* Text Content Slide Fade Translation Matrix */
+@keyframes heroTextReveal {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
+  }
+}
+
+/* Elastic Button Spring Popup */
+@keyframes heroButtonPop {
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Bulb Mechanical Entry Scale Drop */
+@keyframes bulbAssemble {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05) rotate(3deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Ambient Electric Filament Luminescence Pulse */
+@keyframes bulbGlowPulse {
+  0% {
+    filter: drop-shadow(0 4px 10px rgba(49, 151, 149, 0.15));
+  }
+  100% {
+    filter: drop-shadow(0 12px 25px rgba(51, 241, 140, 0.41));
+    transform: translateY(-25px);
+  }
+}

@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praxes — Our Classes</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="footer.css" />
+
+    <style>
+      /* --- Plain Minimalist Hero Module --- */
+      #main .classes-hero-dark-deck {
+        background: #1a1a2e; /* Flat dark navy background matching about.html */
+        border-bottom: 1px solid #222222;
+        min-height: 32vh; 
+        padding: 3.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero__content .hero__badge {
+        display: inline-flex;
+        background: rgba(169, 227, 208, 0.12);
+        color: #a9e3d0;
+        border: 1px solid rgba(169, 227, 208, 0.25);
+        padding: 0.35rem 1.1rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 1.2rem;
+        box-shadow: none;
+      }
+
+      .hero__content .hero__title {
+        color: #ffffff; 
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.3;
+        letter-spacing: -0.5px;
+        max-width: 850px;
+        margin-bottom: 1.5rem;
+        text-shadow: none;
+      }
+
+      .hero__content .hero__title .highlight-text {
+        color: #a9e3d0; 
+        font-weight: 800;
+        text-shadow: none;
+      }
+
+      /* --- Plain Action Buttons Unified to Link Badge Design Specifications --- */
+      .hero__content .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.4rem 1.2rem; /* Matches card subject topic metrics perfectly */
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 6px; /* Smooth rounded curve token matching subject anchors */
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        box-shadow: none;
+        text-shadow: none;
+      }
+
+      /* Primary Button Default Base Structure */
+      .hero__content .cta-btn.primary {
+        background-color: #0f6e56;
+        color: #ffffff;
+        border: 1px solid #0f6e56;
+      }
+
+      /* Primary Button Plain Hover State */
+      .hero__content .cta-btn.primary:hover {
+        background-color: #6b9e8f;
+        border-color: #6b9e8f;
+        color: #ffffff;
+        box-shadow: none;
+      }
+
+      /* Secondary Button Default Base Structure */
+      .hero__content .cta-btn.secondary {
+        background-color: transparent;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      /* Secondary Button Plain Hover State */
+      .hero__content .cta-btn.secondary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #a9e3d0;
+        border-color: #a9e3d0;
+        box-shadow: none;
+      }
+
+      /* --- Subject Board Cards Topic Color Controls --- */
+      .hover.subject-board-type a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      /* Forces text to turn black explicitly on hover state interactions */
+      .hover.subject-board-type:hover,
+      .hover.subject-board-type a:hover {
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <section id="logo">
+        <img src="logo1.png" alt="Praxes Logo" />
+        <div class="logo-name">
+          <a href="index.html">
+            <h3>PRAXES</h3>
+            <h5>Practice. Test.</h5>
+            <h5>Mentor. Succeed.</h5>
+          </a>
+        </div>
+      </section>
+      <div class="menu-container">
+        <div class="menu-open-close">
+          <img
+            class="menuImg"
+            src="menu.svg"
+            alt="menu"
+            onclick="event.preventDefault()"
+          />
+        </div>
+        
+        <section id="mobile-menu">
+          <div id="user-nav-block-mobile" class="auth-hidden" style="width: 100%;">
+            <div class="mobile-profile-header">
+              <div class="profile-trigger" style="cursor: default;">👤</div>
+              <span style="font-weight: 700; color: #2d3748; font-size: 0.95rem;">My Dashboard</span>
+            </div>
+            <a href="progressTracking.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📊 Progress Tracking</button></a>
+            <a href="Badges.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📛 My Badges</button></a>
+            <a href="feedback.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">💬 Send Feedback</button></a>
+            <button class="btn logout-item" onclick="simulateLogout()" style="text-align: left; padding-left: 1.5rem; width: 100%; font-weight: 700;">🚪 Log Out</button>
+            <div class="dropdown-divider" style="margin: 0.5rem 0;"></div>
+          </div>
+
+          <div id="guest-nav-block-mobile" style="width: 100%; display: flex; flex-direction: column;">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn active">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+        </section>
+
+        <section id="menu">
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn active">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+          
+          <div id="guest-nav-block">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <div id="user-nav-block" class="profile-wrapper auth-hidden">
+            <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
+            <div class="dropdown-menu" id="profileDropdownCard">
+              <a href="progressTracking.html" class="dropdown-item">📊 Progress Tracking</a>
+              <a href="Badges.html" class="dropdown-item">📛 My Badges</a>
+              <a href="feedback.html" class="dropdown-item">💬 Send Feedback</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="classes-hero-dark-deck">
+        <div
+          class="hero"
+          style="
+            grid-template-columns: 1fr;
+            text-align: center;
+            max-width: 900px;
+          "
+        >
+          <div class="hero__content" style="align-items: center">
+            <div class="hero__badge"><b>Class I — Class X</b></div>
+            <h1 class="hero__title" style="font-size: clamp(1.8rem, 3.5vw, 2.6rem);">
+              Choose your class &amp; subject to <span class="highlight-text">start learning with Praxes</span>
+            </h1>
+            <div class="hero__actions" style="justify-content:center; margin-top: 0.5rem; display: flex; gap: 1rem;">
+              <a class="cta-btn primary" href="registration.html">Start Practicing</a>
+              <a class="cta-btn secondary" href="subscription.html">View Plans</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page2">
+        <div class="classes">
+          
+          <div class="class">
+            <div class="classno-container">
+              <h4 class="hover classno">Class I</h4>
+            </div>
+            <div class="subjects">
+              <div class="subject">
+                <div class="subject-type">Math :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=1">
+                  <div class="hover subject-board-type">37 Topic</div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">Science :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=4">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">English :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=6">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="class">
+            <div class="classno-container">
+              <h4 class="hover classno">Class II</h4>
+            </div>
+            <div class="subjects">
+              <div class="subject">
+                <div class="subject-type">Math :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=1">
+                  <div class="hover subject-board-type">37 Topic</div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">Science :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=4">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">English :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=6">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="class">
+            <div class="classno-container">
+              <h4 class="hover classno">Class III</h4>
+            </div>
+            <div class="subjects">
+              <div class="subject">
+                <div class="subject-type">Math :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=1">
+                  <div class="hover subject-board-type">37 Topic</div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">Science :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=4">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">English :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=6">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="class">
+            <div class="classno-container">
+              <h4 class="hover classno">Class IV</h4>
+            </div>
+            <div class="subjects">
+              <div class="subject">
+                <div class="subject-type">Math :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=1">
+                  <div class="hover subject-board-type">37 Topic</div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">Science :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=4">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">English :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=6">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="class">
+            <div class="classno-container">
+              <h4 class="hover classno">Class V</h4>
+            </div>
+            <div class="subjects">
+              <div class="subject">
+                <div class="subject-type">Math :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=1">
+                  <div class="hover subject-board-type">37 Topic</div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">Science :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=4">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">English :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=6">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="class">
+            <div class="classno-container">
+              <h4 class="hover classno">Class VI</h4>
+            </div>
+            <div class="subjects">
+              <div class="subject">
+                <div class="subject-type">Math :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=1">
+                  <div class="hover subject-board-type">37 Topic</div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">Science :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=4">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">English :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=6">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="class">
+            <div class="classno-container">
+              <h4 class="hover classno">Class VII</h4>
+            </div>
+            <div class="subjects">
+              <div class="subject">
+                <div class="subject-type">Math :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=1">
+                  <div class="hover subject-board-type">37 Topic</div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">Science :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=4">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">English :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=6">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="class">
+            <div class="classno-container">
+              <h4 class="hover classno">Class VIII</h4>
+            </div>
+            <div class="subjects">
+              <div class="subject">
+                <div class="subject-type">Math :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=1">
+                  <div class="hover subject-board-type">37 Topic</div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">Science :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=4">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">English :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=6">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="class">
+            <div class="classno-container">
+              <h4 class="hover classno">Class IX</h4>
+            </div>
+            <div class="subjects">
+              <div class="subject">
+                <div class="subject-type">Math :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=1">
+                  <div class="hover subject-board-type">37 Topic</div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">Science :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=4">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">English :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=6">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="class">
+            <div class="classno-container">
+              <h4 class="hover classno">Class X</h4>
+            </div>
+            <div class="subjects">
+              <div class="subject">
+                <div class="subject-type">Math :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=1">
+                  <div class="hover subject-board-type">37 Topic</div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">Science :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=4">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+              <div class="subject">
+                <div class="subject-type">English :</div>
+                <a href="chapters.html?class_id=3chapter_type=1subject_id=6">
+                  <div class="hover subject-board-type">
+                  0 Topic
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="popular-subscriptions">Popular Subscriptions</h2>
+        <div class="cards classes">
+          <div class="card class">
+            <div class="price"><h4>INR 99 /-</h4></div>
+            <h2 class="chapter">Test Series</h2>
+            <h4 class="sub-topic">
+              Mock Test / Daily Practice Tests / Weekly Progress Tracking
+            </h4>
+            <button class="join-btn">Join Plan</button>
+          </div>
+          <div class="card class">
+            <div class="price"><h4>INR 999 /-</h4></div>
+            <h2 class="chapter">All Subjects (Yearly Plan)</h2>
+            <h4 class="sub-topic">
+              Improve your grades with PRAXES yearly plan — Unlimited Practice
+              Questions / Time Bounded Tests / Notes / Weekly and Monthly Report
+            </h4>
+            <button class="join-btn">Join Plan</button>
+          </div>
+          <div class="card class">
+            <div class="price"><h4>INR 350 /-</h4></div>
+            <h2 class="chapter">All Subjects (Monthly Plan)</h2>
+            <h4 class="sub-topic">
+              All subjects monthly plan — Unlimited Practice Questions, Mock
+              Tests, Complete Syllabus Test Series
+            </h4>
+            <button class="join-btn">Join Plan</button>
+          </div>
+        </div>
+
+        <a class="explore-subscriptions" href="subscription.html">
+          <button>Explore All Subscriptions</button>
+        </a>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <div class="contacts">
+          <div class="contact-details">
+            <img src="phone.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Phone</h4>
+              <h5>+91 62602 03132</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="mail.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Email</h4>
+              <h5>praxes24@gmail.com</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="map.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Address</h4>
+              <h5>
+                1st floor, Srishti's Palazzo commercial complex, St. Xavier
+                School Road, Raipur, Chhattisgarh
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-platforms">
+        <h3>Our Platforms</h3>
+        <div class="platform">
+          <img src="Facebook.svg" alt="" />
+          <h4>Facebook</h4>
+        </div>
+        <div class="platform">
+          <img src="instagram.svg" alt="" />
+          <h4>Instagram</h4>
+        </div>
+        <div class="platform">
+          <img src="LinkedIn.svg" alt="" />
+          <h4>LinkedIn</h4>
+        </div>
+      </div>
+      <div class="what-offer">
+        <h3>Important Links</h3>
+        <div class="offers">
+          <a href="disclaimer"><h4>Disclaimer</h4></a>
+          <a href="privacy"><h4>Privacy</h4></a>
+          <a href="refund_policy"><h4>Refund Policy</h4></a>
+          <a href="terms_and_condition"><h4>Terms and Conditions</h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praxes — Subscriptions</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="subscription.css" />
+  </head>
+  <body>
+    <header id="header">
+      <section id="logo">
+        <img src="logo1.png" alt="Praxes Logo" />
+        <div class="logo-name">
+          <a href="index.html">
+            <h3>PRAXES</h3>
+            <h5>Practice. Test.</h5>
+            <h5>Mentor. Succeed.</h5>
+          </a>
+        </div>
+      </section>
+      <div class="menu-container">
+        <div class="menu-open-close">
+          <img
+            class="menuImg"
+            src="menu.svg"
+            alt="menu"
+            onclick="event.preventDefault()"
+          />
+        </div>
+        
+        <section id="mobile-menu">
+          <div id="user-nav-block-mobile" class="auth-hidden" style="width: 100%;">
+            <div class="mobile-profile-header">
+              <div class="profile-trigger" style="cursor: default;">👤</div>
+              <span style="font-weight: 700; color: #2d3748; font-size: 0.95rem;">My Dashboard</span>
+            </div>
+            <a href="progressTracking.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📊 Progress Tracking</button></a>
+            <a href="Badges.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📛 My Badges</button></a>
+            <a href="feedback.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">💬 Send Feedback</button></a>
+            <button class="btn logout-item" onclick="simulateLogout()" style="text-align: left; padding-left: 1.5rem; width: 100%; font-weight: 700;">🚪 Log Out</button>
+            <div class="dropdown-divider" style="margin: 0.5rem 0;"></div>
+          </div>
+
+          <div id="guest-nav-block-mobile" style="width: 100%; display: flex; flex-direction: column;">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn active">SUBSCRIPTIONS</button></a>
+        </section>
+
+        <section id="menu">
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn active">SUBSCRIPTIONS</button></a>
+          
+          <div id="guest-nav-block">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <div id="user-nav-block" class="profile-wrapper auth-hidden">
+            <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
+            <div class="dropdown-menu" id="profileDropdownCard">
+              <a href="progressTracking.html" class="dropdown-item">📊 Progress Tracking</a>
+              <a href="Badges.html" class="dropdown-item">📛 My Badges</a>
+              <a href="feedback.html" class="dropdown-item">💬 Send Feedback</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main id="subscription-main">
+      <!-- HERO -->
+      <div class="sub-hero">
+        <div class="sub-hero-label">Pricing</div>
+        <h1>Simple, Affordable <span>Plans</span></h1>
+        <p>
+          Choose the plan that fits your goals. All plans include access to our
+          core practice tools with no hidden charges.
+        </p>
+      </div>
+
+      <!-- PLANS -->
+      <div class="sub-plans-section">
+        <div class="sub-section-title">
+          <h2>Choose Your <span>Plan</span></h2>
+          <div class="sub-section-line"></div>
+          <p>
+            Everything you need to prepare smarter — from daily practice to full
+            exam readiness.
+          </p>
+        </div>
+
+        <div class="subscription-cards">
+          <!-- Test Series -->
+          <div class="subscription-card">
+            <div class="sub-card-top">
+              <div class="sub-card-icon">&#128221;</div>
+              <div class="sub-card-name">Test Series</div>
+              <div class="sub-card-desc">
+                Perfect for students who want focused test practice and weekly
+                performance insights.
+              </div>
+            </div>
+            <div class="sub-card-price">
+              <span class="sub-price-currency">INR</span>
+              <span class="sub-price-amount">99</span>
+              <span class="sub-price-period">/ month</span>
+            </div>
+            <div class="sub-card-features">
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Mock Tests
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Daily Practice Tests
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Weekly Progress Tracking
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Instant Answers after Each Test
+              </div>
+            </div>
+            <div class="sub-card-cta">
+              <button class="sub-join-btn">Get Started</button>
+            </div>
+          </div>
+
+          <!-- Monthly Plan (Popular) -->
+          <div class="subscription-card popular">
+            <span class="popular-badge">&#9733; Most Popular</span>
+            <div class="sub-card-top">
+              <div class="sub-card-icon">&#128218;</div>
+              <div class="sub-card-name">All Subjects — Monthly</div>
+              <div class="sub-card-desc">
+                Full access to all subjects with unlimited practice and complete
+                syllabus test series.
+              </div>
+            </div>
+            <div class="sub-card-price">
+              <span class="sub-price-currency">INR</span>
+              <span class="sub-price-amount">350</span>
+              <span class="sub-price-period">/ month</span>
+            </div>
+            <div class="sub-card-features">
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Unlimited Practice Questions
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Mock Tests &amp; Topic-wise Tests
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Complete Syllabus Test Series
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Instant Answers &amp; Explanations
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Monthly Progress Tracking
+              </div>
+            </div>
+            <div class="sub-card-cta">
+              <button class="sub-join-btn">Get Started</button>
+            </div>
+          </div>
+
+          <!-- Yearly Plan -->
+          <div class="subscription-card">
+            <div class="sub-card-top">
+              <div class="sub-card-icon">&#127942;</div>
+              <div class="sub-card-name">All Subjects — Yearly</div>
+              <div class="sub-card-desc">
+                Best value plan for serious students. Everything included, all
+                year long.
+              </div>
+            </div>
+            <div class="sub-card-price">
+              <span class="sub-price-currency">INR</span>
+              <span class="sub-price-amount">999</span>
+              <span class="sub-price-period">/ year</span>
+            </div>
+            <div class="sub-card-features">
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Unlimited Practice Questions
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Time-Bounded &amp; Full-Length Tests
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Chapter Notes &amp; Study Material
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Weekly &amp; Monthly Reports
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Online Mentor Access
+              </div>
+              <div class="sub-feature">
+                <span class="sub-feature-tick">&#10003;</span>
+                Priority Support
+              </div>
+            </div>
+            <div class="sub-card-cta">
+              <button class="sub-join-btn">Get Started</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guarantee Strip -->
+        <div class="sub-guarantee">
+          <div class="guarantee-item">
+            <span class="guarantee-icon">&#128274;</span>
+            Secure Payment
+          </div>
+          <div class="guarantee-item">
+            <span class="guarantee-icon">&#9989;</span>
+            No Hidden Charges
+          </div>
+          <div class="guarantee-item">
+            <span class="guarantee-icon">&#128222;</span>
+            Cancel Anytime
+          </div>
+          <div class="guarantee-item">
+            <span class="guarantee-icon">&#127775;</span>
+            Instant Activation
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="sub-faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="sub-faq-line"></div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Can I switch plans at any time?
+              <span class="faq-arrow">&#9660;</span>
+            </div>
+            <div class="faq-answer">
+              Yes. You can upgrade or change your plan at any time. Your new
+              plan activates immediately and any remaining balance is adjusted
+              accordingly.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Which classes and subjects are covered?
+              <span class="faq-arrow">&#9660;</span>
+            </div>
+            <div class="faq-answer">
+              Praxes covers Maths (Class I–X), English (Class I–X), and Science
+              (Class VI–X) with topic-wise content and hundreds of practice
+              questions per subject.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Is there a free trial available?
+              <span class="faq-arrow">&#9660;</span>
+            </div>
+            <div class="faq-answer">
+              We offer a limited free tier so you can explore the platform
+              before committing. Sign up and try select topics at no cost.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              What is the refund policy?
+              <span class="faq-arrow">&#9660;</span>
+            </div>
+            <div class="faq-answer">
+              Please refer to our Refund Policy page for full details. Refund
+              requests are reviewed on a case-by-case basis within 7 days of
+              purchase.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <div class="contacts">
+          <div class="contact-details">
+            <img src="phone.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Phone</h4>
+              <h5>+91 62602 03132</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="mail.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Email</h4>
+              <h5>praxes24@gmail.com</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="map.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Address</h4>
+              <h5>
+                1st floor, Srishti's Palazzo commercial complex, St. Xavier
+                School Road, Raipur, Chhattisgarh
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-platforms">
+        <h3>Our Platforms</h3>
+        <div class="platform">
+          <img src="Facebook.svg" alt="" />
+          <h4>Facebook</h4>
+        </div>
+        <div class="platform">
+          <img src="instagram.svg" alt="" />
+          <h4>Instagram</h4>
+        </div>
+        <div class="platform">
+          <img src="LinkedIn.svg" alt="" />
+          <h4>LinkedIn</h4>
+        </div>
+      </div>
+      <div class="what-offer">
+        <h3>Important Links</h3>
+        <div class="offers">
+          <a href="disclaimer"><h4>Disclaimer</h4></a>
+          <a href="privacy"><h4>Privacy</h4></a>
+          <a href="refund_policy"><h4>Refund Policy</h4></a>
+          <a href="terms_and_condition"><h4>Terms and Conditions</h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

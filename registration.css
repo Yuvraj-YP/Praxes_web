@@ -1,0 +1,438 @@
+@font-face {
+  font-family: "Nunito";
+  src: url(Nunito-VariableFont_wght.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --glass-background: #a9e3d0b2;
+  --background: #a9e3d0;
+  --page-color: #f8fbfd;
+  --scroll-bar-color: #0f6e56;
+  --hover-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito";
+}
+
+/* Selectively lock UI copy actions without breaking form input fields */
+body, h2, h3, h5, h4, label, span, button {
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: #e9e9ed;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar-color);
+  border-radius: 10px;
+}
+*::selection {
+  color: white;
+  background-color: var(--background);
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: clip;
+}
+
+/* ============================================
+   REGISTRATION PAGE WRAPPER
+   ============================================ */
+#registration-main {
+  min-height: calc(100vh - 10vh);
+  width: 100%;
+  background: var(--page-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft glow blobs — same as login */
+#registration-main::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: -180px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(169, 227, 208, 0.18) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#registration-main::after {
+  content: "";
+  position: absolute;
+  bottom: -180px;
+  right: -180px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(125, 173, 157, 0.12) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ============================================
+   CARD  (wider than login to fit more fields)
+   ============================================ */
+.reg-container {
+  width: 100%;
+  max-width: 520px;
+  background: white;
+  border: 1.5px solid #e8edf2;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(26, 26, 46, 0.09);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Dark Header ---- */
+.reg-header {
+  background: #1a1a2e;
+  padding: 2.5rem 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.reg-header::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(169, 227, 208, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.reg-header::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(
+    circle,
+    rgba(169, 227, 208, 0.07) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.reg-avatar {
+  width: 72px;
+  height: 72px;
+  background: rgba(169, 227, 208, 0.15);
+  border: 2px solid rgba(169, 227, 208, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  font-size: 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.reg-header h2 {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.3px;
+  position: relative;
+  z-index: 1;
+}
+
+.reg-header p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Form Body ---- */
+.reg-body {
+  padding: 2.2rem 2.5rem 2.5rem;
+}
+
+/* Two-column row for narrow fields */
+.reg-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.reg-field {
+  margin-bottom: 1.3rem;
+}
+
+.reg-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* Input — identical to login */
+.reg-field .input-bar {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.95rem;
+  font-family: "Nunito";
+  font-weight: 600;
+  color: #1a1a2e;
+  background: #f8fbfd;
+  border: 1.5px solid #e8edf2;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.25s ease;
+  user-select: text;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.reg-field .input-bar:focus {
+  border-color: #0f6e56;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(169, 227, 208, 0.2);
+}
+
+.reg-field .input-bar::placeholder {
+  color: #aab0be;
+  font-weight: 500;
+}
+
+/* Select arrow */
+.reg-field select.input-bar {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237dad9d' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* Password strength bar */
+.password-strength {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.strength-bar {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: #e8edf2;
+  transition: background 0.3s ease;
+}
+
+.strength-bar.weak {
+  background: #ef4444;
+}
+.strength-bar.medium {
+  background: #f59e0b;
+}
+.strength-bar.strong {
+  background: #0f6e56;
+}
+
+.strength-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #aab0be;
+  margin-left: 6px;
+  white-space: nowrap;
+  min-width: 44px;
+}
+
+/* Input with icon suffix (eye toggle) */
+.input-wrap {
+  position: relative;
+}
+
+.input-wrap .input-bar {
+  padding-right: 2.8rem;
+}
+
+.input-toggle {
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #aab0be;
+  transition: color 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.input-toggle:hover {
+  color: #0f6e56;
+}
+
+/* Terms checkbox */
+.reg-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.4rem;
+  cursor: pointer;
+}
+
+.reg-terms input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0f6e56;
+  cursor: pointer;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.reg-terms-text {
+  font-size: 0.83rem;
+  color: #5a6278;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.reg-terms-text a {
+  color: #0f6e56;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.reg-terms-text a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Submit — identical style to login ---- */
+.reg-submit {
+  width: 100%;
+  padding: 0.95rem;
+  background: #0f6e56;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: "Nunito";
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(125, 173, 157, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.reg-submit:hover {
+  background: #6b9e8f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(125, 173, 157, 0.4);
+}
+
+/* ---- Divider ---- */
+.reg-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.4rem 0;
+}
+
+.reg-divider-line {
+  flex: 1;
+  height: 1px;
+  background: #e8edf2;
+}
+
+.reg-divider-text {
+  font-size: 0.78rem;
+  color: #aab0be;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---- Footer note ---- */
+.reg-footer-note {
+  margin-top: 1.4rem;
+  text-align: center;
+  font-size: 0.84rem;
+  color: #8890a4;
+  font-weight: 600;
+}
+
+.reg-footer-note a {
+  color: #0f6e56;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.reg-footer-note a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Helper text under field ---- */
+.field-hint {
+  font-size: 0.73rem;
+  color: #aab0be;
+  font-weight: 600;
+  margin-top: 0.35rem;
+  display: block;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 520px) {
+  #registration-main {
+    padding: 2rem 1rem;
+    align-items: flex-start;
+  }
+  .reg-header {
+    padding: 2rem 1.5rem 1.8rem;
+  }
+  .reg-body {
+    padding: 1.8rem 1.5rem 2rem;
+  }
+  .reg-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .reg-step-connector {
+    width: 28px;
+  }
+}

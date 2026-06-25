@@ -1,0 +1,382 @@
+/* ==========================================================================
+   FACULTY CARDS GRID SYSTEM
+   ========================================================================== */
+@font-face {
+  font-family: "Nunito";
+  src: url(Nunito-VariableFont_wght.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+   .teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem;
+  align-items: start;
+}
+
+.teacher-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  min-height: 320px;
+  padding: 3.5rem 1.5rem 1.5rem 1.5rem; /* Expanded top padding to clear status badges */
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.teacher-card:not(.elite-premium-card):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e1;
+}
+
+/* Automated Left-Top Badge for Standard Cards */
+.teacher-card:not(.elite-premium-card)::after {
+  content: "BASIC";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #edf2f7;
+  color: #4a5568;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  z-index: 5;
+}
+
+.card-watermark {
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(226, 232, 240, 0.45);
+  user-select: none;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   FACULTY PROFILE MEDIA & AVATARS
+   ========================================================================== */
+.teacher-avatar-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1rem auto;
+  overflow: hidden;
+  background: #ebf8ff;
+  color: #2b6cb0;
+  font-size: 2.25rem;
+  border-radius: 50%;
+  border: 3px solid #bee3f8;
+}
+
+.teacher-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.physics-avatar {
+  background: #fdf2f8;
+  color: #db2777;
+  border-color: #fbcfe8;
+}
+
+.science-avatar {
+  background: #f0fff4;
+  color: #38a169;
+  border-color: #c6f6d5;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY AND BIO TEXT STYLING
+   ========================================================================== */
+.teacher-designation {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3182ce;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.card-teacher-name {
+  text-align: center;
+  margin: 0.25rem 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #1a202c;
+  z-index: 1;
+}
+
+.teacher-bio {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   CARD CTA COMPONENT LAYOUT
+   ========================================================================== */
+.action-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  z-index: 2;
+}
+
+.action-container .card-link-wrapper {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+}
+
+.action-container button {
+  width: 100%;
+  padding: 0.65rem 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.know-more-btn {
+  background: transparent;
+  border: 1px solid #cbd5e0;
+  color: #4a5568;
+}
+
+.know-more-btn:hover {
+  background-color: #f7fafc;
+}
+
+.book-demo-btn {
+  background-color: #0f6e56;
+  border: 1px solid #0f6e56;
+  color: #ffffff;
+}
+
+.book-demo-btn:hover {
+  background-color: #6b9e8f;
+  border-color: #6b9e8f;
+}
+
+/* ==========================================================================
+   INTERACTIVE FOCUS MODAL OVERLAY
+   ========================================================================== */
+.focus-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(26, 32, 44, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.focus-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.focus-modal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 90%;
+  max-width: 550px;
+  max-height: 85vh;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.focus-overlay.active .focus-modal {
+  transform: scale(1);
+}
+
+.close-overlay-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 32px;
+  height: 32px;
+  background: #edf2f7;
+  border: none;
+  font-size: 1.2rem;
+  color: #4a5568;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.close-overlay-btn:hover {
+  background: #e2e8f0;
+  color: #1a202c;
+}
+
+.modal-header-wrap {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.modal-profile-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #ebf8ff;
+  color: #2b6cb0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid #bee3f8;
+  border-radius: 20px;
+}
+
+#modalTeacherName {
+  margin: 0.25rem 0 0.15rem 0;
+  color: #1a202c;
+  font-size: 1.5rem;
+}
+
+#modalTeacherDesignation {
+  margin: 0;
+  color: #3182ce;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   MODAL ATTRIBUTE SHEET DETAILS
+   ========================================================================== */
+.modal-specs-body {
+  flex: 1;
+  padding: 0.5rem 0;
+  overflow-y: auto;
+}
+
+.modal-specs-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-specs-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.spec-meta-group {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.spec-meta-group:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.spec-meta-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #718096;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.spec-chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.spec-inline-chip {
+  padding: 0.35rem 0.75rem;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  color: #2d3748;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.hidden-teacher-storage {
+  display: none;
+}
+
+/* ==========================================================================
+    PREMIUM ELITE FACULTY INLINE OVERRIDES
+   ========================================================================== */
+.teacher-card.elite-premium-card {
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: linear-gradient(to bottom right, #ffffff, #fffdf9);
+}
+
+.teacher-card.elite-premium-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(212, 175, 55, 0.85);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15), 
+              0 8px 24px rgba(125, 173, 157, 0.06);
+}
+
+/* High-Contrast Left-Top Elite Status Label Component */
+.teacher-card.elite-premium-card::after {
+  content: "ELITE";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #2c2c4d 100%);
+  color: #d4af37;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 5;
+}
+
+.teacher-card.elite-premium-card .card-watermark {
+  color: rgba(212, 175, 55, 0.03);
+}

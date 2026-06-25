@@ -1,0 +1,281 @@
+@font-face {
+  font-family: "Nunito";
+  src: url(Nunito-VariableFont_wght.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* --- Badges Dashboard Core Layout --- */
+.badges-container {
+width: 100%;
+max-width: 1000px;
+margin: 0 auto;
+padding: 2.5rem 1.5rem;
+box-sizing: border-box;
+}
+
+/* Student Profile Metadata Section */
+.student-profile-bar {
+background: #1a1a2e; 
+border-radius: 12px;
+padding: 1.5rem 2rem;
+color: #ffffff;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1.5rem;
+margin-bottom: 2rem;
+}
+
+.profile-meta-item span {
+display: block;
+font-size: 0.75rem;
+color: #a9e3d0;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 0.25rem;
+font-weight: 700;
+}
+
+.profile-meta-item h3 {
+margin: 0;
+font-size: 1.15rem;
+font-weight: 800;
+}
+
+/* --- Stacked Badges Grid Layout --- */
+.badges-stacked-section {
+background: #ffffff;
+border: 1px solid #e2e8f0;
+border-radius: 16px;
+padding: 2.5rem 2rem;
+margin-bottom: 2.5rem;
+}
+
+.badges-stacked-section h2 {
+font-size: 1.25rem;
+color: #1a1a2e;
+margin-bottom: 0.5rem;
+font-weight: 800;
+text-align: center;
+}
+
+.badges-stacked-section p.milestone-hook {
+font-size: 0.88rem;
+color: #718096;
+margin-bottom: 2.5rem;
+font-weight: 600;
+text-align: center;
+}
+
+/* Vertical Stack Grid Layout */
+.badges-vertical-stack {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+justify-items: center;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.badge-item-node {
+display: flex;
+flex-direction: column;
+align-items: center;
+cursor: pointer;
+transition: transform 0.2s ease;
+}
+
+.badge-item-node:hover {
+transform: translateY(-4px);
+}
+
+/* Flat Circular Badge Disk */
+.circular-badge-disk {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2.5rem;
+margin-bottom: 0.75rem;
+border: 3px solid #edf2f7;
+background-color: #f8fbfd;
+position: relative;
+}
+
+/* Tier Border Configurations */
+.tier-elite-disk { border-color: #4a5568; background-color: #f7fafc; }
+.tier-pro-disk { border-color: #0f6e56; background-color: #f3faf7; }
+.tier-beginner-disk { border-color: #3182ce; background-color: #ebf8ff; }
+
+/* Explicit Locked State Styles (Grayscale filter override) */
+.badge-item-node.badge-locked {
+cursor: not-allowed;
+}
+.badge-item-node.badge-locked .circular-badge-disk {
+filter: grayscale(1) opacity(0.6);
+border-color: #cbd5e0;
+background-color: #f7fafc;
+}
+.badge-item-node.badge-locked h4 {
+color: #a0aec0;
+}
+
+/* Padlock indicator tag for locked items */
+.lock-indicator-badge {
+position: absolute;
+bottom: 0;
+right: 0;
+background: #e2e8f0;
+border: 2px solid #ffffff;
+width: 26px;
+height: 30px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.8rem;
+}
+
+.badge-item-node h4 {
+margin: 0 0 0.4rem 0;
+font-size: 0.95rem;
+font-weight: 800;
+color: #2d3748;
+text-align: center;
+}
+
+/* Badge Pill Tags */
+.badge-tier-tag {
+font-size: 0.7rem;
+font-weight: 800;
+padding: 0.15rem 0.6rem;
+border-radius: 20px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+.tag-elite { background-color: #e2e8f0; color: #4a5568; }
+.tag-pro { background-color: #d1fae5; color: #276749; }
+.tag-beginner { background-color: #bee3f8; color: #2b6cb0; }
+.tag-locked { background-color: #edf2f7; color: #718096; }
+
+/* --- PORTRAIT POPUP MODAL FRAME --- */
+.badge-popup-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(26, 26, 46, 0.8);
+backdrop-filter: blur(4px);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.badge-popup-overlay.overlay-active {
+opacity: 1;
+visibility: visible;
+}
+
+.portrait-modal-card {
+background: #ffffff;
+width: 90%;
+max-width: 360px; 
+height: 500px; /* Increased slightly to balance student identity rows */
+border-radius: 20px;
+padding: 2rem;
+box-sizing: border-box;
+text-align: center;
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+transform: scale(0.9);
+transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.badge-popup-overlay.overlay-active .portrait-modal-card {
+transform: scale(1);
+}
+
+.modal-close-trigger {
+position: absolute;
+top: 1rem;
+right: 1.25rem;
+background: none;
+border: none;
+font-size: 1.5rem;
+color: #a0aec0;
+cursor: pointer;
+transition: color 0.2s ease;
+}
+.modal-close-trigger:hover { color: #4a5568; }
+
+.modal-celebration-title {
+font-size: 1.4rem;
+font-weight: 850;
+color: #1a1a2e;
+margin-top: 0.5rem;
+}
+
+/* Student validation string */
+.modal-student-identity {
+font-size: 0.82rem;
+color: #718096;
+font-weight: 700;
+margin-top: 0.2rem;
+}
+
+.modal-badge-graphic {
+width: 110px;
+height: 110px;
+border-radius: 50%;
+background: #f8fbfd;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 3.2rem;
+border: 4px solid #edf2f7;
+margin: 1rem 0;
+}
+
+.modal-badge-name {
+font-size: 1.15rem;
+font-weight: 800;
+color: #2d3748;
+margin: 0 0 0.5rem 0;
+}
+
+.modal-badge-criteria {
+font-size: 0.88rem;
+color: #5a6278;
+line-height: 1.5;
+margin: 0 0 1.25rem 0;
+font-weight: 500;
+}
+
+.modal-action-dismiss-btn {
+background-color: #1a1a2e;
+color: #ffffff;
+border: none;
+width: 100%;
+padding: 0.75rem 0;
+font-size: 0.9rem;
+font-weight: 700;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.2s ease;
+}
+.modal-action-dismiss-btn:hover { background-color: #2d2d44; }
+
+@media (max-width: 500px) {
+.badges-vertical-stack { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+}

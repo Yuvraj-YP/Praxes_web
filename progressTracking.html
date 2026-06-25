@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Tracking — Praxes</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="ProgressTracking.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    <header id="header">
+      <section id="logo">
+        <img src="logo1.png" alt="Praxes Logo" />
+        <div class="logo-name">
+          <a href="index.html">
+            <h3>PRAXES</h3>
+            <h5>Practice. Test.</h5>
+            <h5>Mentor. Succeed.</h5>
+          </a>
+        </div>
+      </section>
+      <div class="menu-container">
+        <div class="menu-open-close">
+          <img class="menuImg" src="menu.svg" alt="menu" onclick="event.preventDefault()" />
+        </div>
+        
+        <section id="mobile-menu">
+          <div id="user-nav-block-mobile" style="width: 100%;">
+            <div class="mobile-profile-header">
+              <div class="profile-trigger" style="cursor: default;">👤</div>
+              <span style="font-weight: 700; color: #2d3748; font-size: 0.95rem;">My Dashboard</span>
+            </div>
+            <a href="progressTracking.html"><button class="btn active" style="text-align: left; padding-left: 1.5rem; width: 100%;">📊 Progress Tracking</button></a>
+            <a href="Badges.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📛 My Badges</button></a>
+            <a href="feedback.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">💬 Send Feedback</button></a>
+            <button class="btn logout-item" onclick="simulateLogout()" style="text-align: left; padding-left: 1.5rem; width: 100%; font-weight: 700;">🚪 Log Out</button>
+            <div class="dropdown-divider" style="margin: 0.5rem 0;"></div>
+          </div>
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+        </section>
+
+        <section id="menu">
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+          <div id="user-nav-block" class="profile-wrapper">
+            <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
+            <div class="dropdown-menu" id="profileDropdownCard">
+              <a href="progressTracking.html" class="dropdown-item active">📊 Progress Tracking</a>
+              <a href="Badges.html" class="dropdown-item">📛 My Badges</a>
+              <a href="feedback.html" class="dropdown-item">💬 Send Feedback</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="offers-section" style="padding-top: 2rem; padding-bottom: 0;">
+        <div class="section-header">
+          <span class="section-label">Performance Deck</span>
+          <h2 class="section-title">Academic Progress <span>Report</span></h2>
+          <div class="section-underline"></div>
+        </div>
+      </section>
+
+      <div class="analytics-container">
+        
+        <div class="student-profile-bar">
+          <div class="profile-meta-item"><span>Student Name</span><h3>Yuvraj Patel</h3></div>
+          <div class="profile-meta-item"><span>Enrolled Bracket</span><h3>Class X (Standard Grid)</h3></div>
+          <div class="profile-meta-item"><span>Report Window</span><h3>Academic Grid Sync</h3></div>
+          <div class="profile-meta-item"><span>Assigned Mentor</span><h3>Anand Sharma</h3></div>
+        </div>
+
+        <div class="mentor-remarks-static-card">
+          <h4>Mentor Remarks &amp; Feedback</h4>
+          <p id="dynamicMentorRemarksText">
+            "Yuvraj exhibits outstanding conceptual understanding in core Mathematics and Physics tracks. Consistency in January's daily modules has been exceptional. Recommend allocating additional focus to English verbal test series to boost overall cumulative metrics."
+          </p>
+        </div>
+
+        <div class="analytics-tabs-nav">
+          <button class="tab-trigger-btn active-tab" onclick="switchAnalyticsTab(event, 'tabPerformance')">📈 Test Performance</button>
+          <button class="tab-trigger-btn" onclick="switchAnalyticsTab(event, 'tabCalendar')">📅 Practice Calendar</button>
+          <button class="tab-trigger-btn" onclick="switchAnalyticsTab(event, 'tabAttendance')">📊 Weekly Attendance</button>
+        </div>
+
+        <div id="tabPerformance" class="analytics-tab-panel active-panel">
+          <div class="dashboard-card-section">
+            <h2>Subject Test Performance Tracking</h2>
+            <div class="multi-subject-chart-deck">
+              <div class="subject-chart-row-item">
+                <div class="subject-chart-info"><h4>Mathematics Columns</h4><span class="legend-indicator math-indicator">Math Slate</span></div>
+                <div class="chart-axis-container-bars">
+                  <div class="y-axis-labels"><div>Max</div><div>75%</div><div>50%</div><div>25%</div><div>0%</div></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar math-pillar" style="height: 82%;"><div class="pillar-bar-value">82</div></div><span class="node-x-label">Test 1</span></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar math-pillar" style="height: 70%;"><div class="pillar-bar-value">35</div></div><span class="node-x-label">Test 2</span></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar math-pillar" style="height: 90%;"><div class="pillar-bar-value">90</div></div><span class="node-x-label">Test 3</span></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar math-pillar" style="height: 84%;"><div class="pillar-bar-value">42</div></div><span class="node-x-label">Test 4</span></div>
+                </div>
+              </div>
+              <div class="subject-chart-row-item">
+                <div class="subject-chart-info"><h4>Science Columns</h4><span class="legend-indicator science-indicator">Science Mint</span></div>
+                <div class="chart-axis-container-bars">
+                  <div class="y-axis-labels"><div>Max</div><div>75%</div><div>50%</div><div>25%</div><div>0%</div></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar science-pillar" style="height: 75%;"><div class="pillar-bar-value">45</div></div><span class="node-x-label">Test 1</span></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar science-pillar" style="height: 92%;"><div class="pillar-bar-value">92</div></div><span class="node-x-label">Test 2</span></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar science-pillar" style="height: 90%;"><div class="pillar-bar-value">54</div></div><span class="node-x-label">Test 3</span></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar science-pillar" style="height: 87%;"><div class="pillar-bar-value">70</div></div><span class="node-x-label">Test 4</span></div>
+                </div>
+              </div>
+              <div class="subject-chart-row-item">
+                <div class="subject-chart-info"><h4>English Columns</h4><span class="legend-indicator english-indicator">English Sky</span></div>
+                <div class="chart-axis-container-bars">
+                  <div class="y-axis-labels"><div>Max</div><div>75%</div><div>50%</div><div>25%</div><div>0%</div></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar english-pillar" style="height: 86%;"><div class="pillar-bar-value">78</div></div><span class="node-x-label">Test 1</span></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar english-pillar" style="height: 85%;"><div class="pillar-bar-value">85</div></div><span class="node-x-label">Test 2</span></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar english-pillar" style="height: 80%;"><div class="pillar-bar-value">40</div></div><span class="node-x-label">Test 3</span></div>
+                  <div class="chart-bar-column-group"><div class="chart-pillar-bar english-pillar" style="height: 88%;"><div class="pillar-bar-value">88</div></div><span class="node-x-label">Test 4</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tabCalendar" class="analytics-tab-panel">
+          <div class="dashboard-card-section">
+            <div class="calendar-scroller-header">
+              <div class="calendar-title-wrap">
+                <h3 id="calendarMonthTitleDisplay">January 2026</h3>
+                <span>Day wise chart</span>
+              </div>
+              <div class="scroll-controls-box">
+                <button class="scroll-nav-btn" onclick="scrollMonthStep(-1)">◀</button>
+                <button class="scroll-nav-btn" onclick="scrollMonthStep(1)">▶</button>
+              </div>
+            </div>
+
+            <div class="mini-calendar-wrapper-box">
+              <div id="calendarGridContent"></div>
+              <div id="emptyMonthNotice" class="empty-month-notice-box">
+                ⚠️ You have not practiced in this month.
+              </div>
+            </div>
+
+            <div class="activity-legend">
+              <span>Less Practice</span>
+              <div class="activity-cell"></div>
+              <div class="activity-cell stage-1"></div>
+              <div class="activity-cell stage-2"></div>
+              <div class="activity-cell stage-3"></div>
+              <div class="activity-cell stage-4"></div>
+              <span>More Practice (120m+)</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="tabAttendance" class="analytics-tab-panel">
+          <div class="dashboard-card-section">
+            <h2>Monthly Attendance Matrix (Days Attended Per Week)</h2>
+            <div class="bar-chart-container">
+              <div class="bar-column-group"><div class="bar-pillar" style="height: 85%;"><div class="bar-pillar-value">6 / 7</div></div><span class="bar-axis-title">Week 1</span></div>
+              <div class="bar-column-group"><div class="bar-pillar" style="height: 100%;"><div class="bar-pillar-value">7 / 7</div></div><span class="bar-axis-title">Week 2</span></div>
+              <div class="bar-column-group"><div class="bar-pillar" style="height: 71%;"><div class="bar-pillar-value">5 / 7</div></div><span class="bar-axis-title">Week 3</span></div>
+              <div class="bar-column-group"><div class="bar-pillar" style="height: 85%;"><div class="bar-pillar-value">6 / 7</div></div><span class="bar-axis-title">Week 4</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <footer id="footer">
+        <div class="contact-us">
+          <h3>Contact Us</h3>
+          <div class="contacts">
+            <div class="contact-details"><img src="phone.svg" alt="" /><div class="contact"><h4 class="contact-title">Phone</h4><h5>+91 62602 03132</h5></div></div>
+            <div class="contact-details"><img src="mail.svg" alt="" /><div class="contact"><h4 class="contact-title">Email</h4><h5>praxes24@gmail.com</h5></div></div>
+            <div class="contact-details"><img src="map.svg" alt="" /><div class="contact"><h4 class="contact-title">Address</h4><h5>1st floor, Srishti's Palazzo commercial complex, St. Xavier School Road, Raipur, Chhattisgarh</h5></div></div>
+          </div>
+        </div>
+        <div class="social-platforms">
+          <h3>Our Platforms</h3>
+          <div class="platform"><img src="Facebook.svg" alt="" /><h4>Facebook</h4></div>
+          <div class="platform"><img src="instagram.svg" alt="" /><h4>Instagram</h4></div>
+          <div class="platform"><img src="LinkedIn.svg" alt="" /><h4>LinkedIn</h4></div>
+        </div>
+        <div class="what-offer">
+          <h3>Important Links</h3>
+          <div class="offers">
+            <a href="disclaimer"><h4>Disclaimer</h4></a>
+            <a href="privacy"><h4>Privacy</h4></a>
+            <a href="refund_policy"><h4>Refund Policy</h4></a>
+            <a href="terms_and_condition"><h4>Terms and Conditions</h4></a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" ></script>
+    <script src="script.js"></script>
+    <script>
+      function switchAnalyticsTab(tabEvent, targetPanelId) {
+        const panelsList = document.querySelectorAll('.analytics-tab-panel');
+        const triggerBtns = document.querySelectorAll('.tab-trigger-btn');
+        
+        panelsList.forEach(panel => panel.classList.remove('active-panel'));
+        triggerBtns.forEach(btn => btn.classList.remove('active-tab'));
+        
+        document.getElementById(targetPanelId).classList.add('active-panel');
+        tabEvent.currentTarget.classList.add('active-tab');
+      }
+
+      const monthsMap2026 = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+      let activeMonthIndex = 0;
+
+      const januaryMockData = [
+        { day: 1, stage: 1, mins: 15 }, { day: 2, stage: 2, mins: 45 }, { day: 3, stage: 0, mins: 0 },
+        { day: 4, stage: 3, mins: 80 }, { day: 5, stage: 4, mins: 115 }, { day: 6, stage: 1, mins: 20 },
+        { day: 7, stage: 2, mins: 55 }, { day: 8, stage: 3, mins: 70 }, { day: 9, stage: 4, mins: 100 },
+        { day: 10, stage: 0, mins: 0 }, { day: 11, stage: 2, mins: 35 }, { day: 12, stage: 1, mins: 15 },
+        { day: 13, stage: 3, mins: 65 }, { day: 14, stage: 4, mins: 110 }, { day: 15, stage: 0, mins: 0 },
+        { day: 16, stage: 1, mins: 22 }, { day: 17, stage: 2, mins: 40 }, { day: 18, stage: 3, mins: 85 },
+        { day: 19, stage: 3, mins: 75 }, { day: 20, stage: 4, mins: 120 }, { day: 21, stage: 2, mins: 50 },
+        { day: 22, stage: 1, mins: 12 }, { day: 23, stage: 0, mins: 0 }, { day: 24, stage: 4, mins: 105 },
+        { day: 25, stage: 3, mins: 62 }, { day: 26, stage: 2, mins: 30 }, { day: 27, stage: 1, mins: 18 },
+        { day: 28, stage: 3, mins: 88 }, { day: 29, stage: 4, mins: 125 }, { day: 30, stage: 2, mins: 42 },
+        { day: 31, stage: 3, mins: 66 }
+      ];
+
+      function renderActiveMonthGrid() {
+        const gridContainer = document.getElementById('calendarGridContent');
+        const emptyNotice = document.getElementById('emptyMonthNotice');
+        const activeMonthName = monthsMap2026[activeMonthIndex];
+
+        gridContainer.innerHTML = '';
+        
+        if (activeMonthName !== "January") {
+          emptyNotice.style.display = 'block';
+          return;
+        }
+
+        emptyNotice.style.display = 'none';
+
+        const cellsWrapper = document.createElement('div');
+        cellsWrapper.className = 'month-cells-container';
+
+        januaryMockData.forEach(item => {
+          const cellNode = document.createElement('div');
+          cellNode.className = `activity-cell ${item.stage ? 'stage-' + item.stage : ''}`;
+          cellNode.innerText = item.day;
+
+          const tooltipNode = document.createElement('div');
+          tooltipNode.className = 'big-dark-tooltip';
+          tooltipNode.innerHTML = `<strong>January ${item.day}, 2026</strong>⏱️ Practice: ${item.mins} Minutes`;
+
+          cellNode.appendChild(tooltipNode);
+          cellsWrapper.appendChild(cellNode);
+        });
+
+        gridContainer.appendChild(cellsWrapper);
+      }
+
+      function scrollMonthStep(directionStep) {
+        activeMonthIndex += directionStep;
+
+        if (activeMonthIndex < 0) activeMonthIndex = 11;
+        if (activeMonthIndex > 11) activeMonthIndex = 0;
+
+        const currentTargetName = monthsMap2026[activeMonthIndex];
+        document.getElementById('calendarMonthTitleDisplay').innerText = currentTargetName + " 2026";
+
+        renderActiveMonthGrid();
+      }
+
+      window.addEventListener('DOMContentLoaded', renderActiveMonthGrid);
+    </script>
+  </body>
+</html>

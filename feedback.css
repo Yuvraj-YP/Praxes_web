@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "Nunito";
+  src: url(Nunito-VariableFont_wght.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+/* --- Layout Grid Framework --- */
+      .feedback-form-container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem;
+        box-sizing: border-box;
+      }
+
+      .feedback-split-grid {
+        display: flex;
+        gap: 2.5rem;
+        align-items: stretch; /* Forces equal height columns on desktop */
+      }
+
+      .form-column-left, .form-column-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-field-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Removes bottom margin from final column blocks to keep alignment tight */
+      .form-column-left .form-field-group:last-child,
+      .form-column-right .form-field-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .form-field-group label {
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #4a5568;
+        letter-spacing: 0.5px;
+      }
+
+      .form-input-element, .form-textarea-element {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+        box-sizing: border-box;
+        font-family: inherit;
+        background: #ffffff;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .form-input-element:focus, .form-textarea-element:focus {
+        border-color: #3182ce;
+        box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+      }
+
+      /* Height constraint: textarea takes up available space but does not push past the left box stack bounds */
+      .form-textarea-element {
+        flex: 1;
+        min-height: 185px; 
+        resize: none;
+      }
+
+      /* Full horizontal width bottom button styling */
+      .feedback-submit-btn {
+        display: block;
+        width: 100%;
+        background: #0f6e56;
+        color: #ffffff;
+        padding: 1rem;
+        font-size: 1.05rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 1.5rem;
+        transition: background 0.2s ease, transform 0.1s ease;
+        box-shadow: 0 4px 10px rgba(49, 130, 206, 0.2);
+      }
+
+      .feedback-submit-btn:hover {
+        background: rgba(57, 130, 86, 0.933);
+        transform: translateY(-1px);
+      }
+
+      .feedback-submit-btn:active {
+        transform: translateY(0);
+      }
+
+      /* --- High-Fidelity Mobile Viewport Adaptation Layer --- */
+      @media (max-width: 768px) {
+        .feedback-form-container {
+          padding: 1.5rem 1rem;
+        }
+        
+        .feedback-split-grid {
+          flex-direction: column;
+          gap: 0; /* Clear space grid to let margins handle spacing flows natively */
+        }
+
+        .form-column-left .form-field-group:last-child {
+          margin-bottom: 1.5rem; /* Adds standard spacing drop when left elements collapse over the right elements */
+        }
+
+        /* Prevent empty spaces on mobile: lets textarea follow standard sizing bounds */
+        .form-textarea-element {
+          min-height: 140px; 
+          flex: none;
+        }
+
+        .feedback-submit-btn {
+          margin-top: 1.25rem;
+          padding: 0.85rem;
+          font-size: 1rem;
+        }
+      }

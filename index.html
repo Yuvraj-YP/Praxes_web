@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praxes — Practice Makes Perfect</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    <header id="header">
+      <section id="logo">
+        <img src="logo1.png" alt="Praxes Logo" />
+        <div class="logo-name">
+          <a href="index.html">
+            <h3>PRAXES</h3>
+            <h5>Practice. Test.</h5>
+            <h5>Mentor. Succeed.</h5>
+          </a>
+        </div>
+      </section>
+      <div class="menu-container">
+        <div class="menu-open-close">
+          <img
+            class="menuImg"
+            src="menu.svg"
+            alt="menu"
+            onclick="event.preventDefault()"
+          />
+        </div>
+        
+        <section id="mobile-menu">
+          <div id="user-nav-block-mobile" class="auth-hidden" style="width: 100%;">
+            <div class="mobile-profile-header">
+              <div class="profile-trigger" style="cursor: default;">👤</div>
+              <span style="font-weight: 700; color: #2d3748; font-size: 0.95rem;">My Dashboard</span>
+            </div>
+            <a href="progressTracking.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📊 Progress Tracking</button></a>
+            <a href="Badges.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📛 My Badges</button></a>
+            <a href="feedback.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">💬 Send Feedback</button></a>
+            <button class="btn logout-item" onclick="simulateLogout()" style="text-align: left; padding-left: 1.5rem; width: 100%; font-weight: 700;">🚪 Log Out</button>
+            <div class="dropdown-divider" style="margin: 0.5rem 0;"></div>
+          </div>
+
+          <div id="guest-nav-block-mobile" style="width: 100%; display: flex; flex-direction: column;">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+        </section>
+
+        <section id="menu">
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+          
+          <div id="guest-nav-block">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <div id="user-nav-block" class="profile-wrapper auth-hidden">
+            <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
+            <div class="dropdown-menu" id="profileDropdownCard">
+              <a href="progressTracking.html" class="dropdown-item">📊 Progress Tracking</a>
+              <a href="Badges.html" class="dropdown-item">📛 My Badges</a>
+              <a href="feedback.html" class="dropdown-item">💬 Send Feedback</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page1">
+        <div class="hero">
+          <div class="hero__content">
+            <div class="hero__badge">Welcome to Praxes</div>
+            <h1 class="hero__title">Consistency, Discipline, Excellence</h1>
+            <p class="hero__subtitle">
+              Start your learning journey with PRAXES, an EdTech platform
+              designed for focused and structured practice sessions with instant
+              answer support. Explore topic-wise and full-length tests with
+              step-by-step solutions, and monitor your growth through detailed
+              progress tracking reports. Designed to build strong conceptual
+              clarity and consistent improvement, PRAXES helps learners of all
+              ages turn everyday practice into measurable success and long-term
+              academic confidence.
+            </p>
+            <div class="hero__actions">
+              <a class="cta-btn primary" href="registration.html">Start Learning</a>
+              <a class="cta-btn primary" href="about.html">Get Mentor</a>
+              <a class="cta-btn secondary" href="subscription.html">View Plans</a>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <img src="logo1.png" alt="Illustration of study materials" />
+          </div>
+        </div>
+      </section>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-number">10K+</span>
+          <span class="stat-label">Practice Questions</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">Class I–X</span>
+          <span class="stat-label">Full Coverage</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Core Subjects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Happy Students</span>
+        </div>
+      </div>
+
+      <section class="offers-section">
+        <div class="section-header">
+          <span class="section-label">What We Offer</span>
+          <h2 class="section-title">Everything in <span>One Place</span></h2>
+          <div class="section-underline"></div>
+          <p class="section-subtitle" style="margin-top: 1rem">
+            From core subjects to daily practice tools — everything a student
+            needs, all under one roof.
+          </p>
+        </div>
+
+        <div class="subjects-banner">
+          <a href="classes.html" class="subject-item">
+            <span class="subject-icon">&#10010;</span>
+            <span class="subject-name">Maths</span>
+            <span class="subject-range">Class 1 – 10</span>
+          </a>
+          <span class="subject-pipe"></span>
+          <a href="classes.html" class="subject-item">
+            <span class="subject-icon">&#10010;</span>
+            <span class="subject-name">English</span>
+            <span class="subject-range">Class 1 – 10</span>
+          </a>
+          <span class="subject-pipe"></span>
+          <a href="classes.html" class="subject-item">
+            <span class="subject-icon">&#10010;</span>
+            <span class="subject-name">Science</span>
+            <span class="subject-range">Class 6 – 10</span>
+          </a>
+        </div>
+
+        <div class="offers-divider">
+          <span class="offers-divider-line"></span>
+          <span class="offers-divider-label">Platform Features</span>
+          <span class="offers-divider-line"></span>
+        </div>
+
+        <div class="offer-cards">
+          <div class="offer-card">
+            <span class="offer-num">01</span>
+            <div class="offer-icon-wrap">&#128197;</div>
+            <h3>Daily Practice</h3>
+            <p>
+              Short, effective practice sessions that make concepts easy to
+              understand and improve consistency with every attempt.
+            </p>
+          </div>
+          <div class="offer-card">
+            <span class="offer-num">02</span>
+            <div class="offer-icon-wrap">&#128221;</div>
+            <h3>Unlimited Tests</h3>
+            <p>
+              Practice as much as you want with topic-wise and full-length tests
+              designed to strengthen preparation at every stage.
+            </p>
+          </div>
+          <div class="offer-card">
+            <span class="offer-num">03</span>
+            <div class="offer-icon-wrap">&#9889;</div>
+            <h3>Instant Answers</h3>
+            <p>
+              Get answers immediately after every attempt to identify mistakes,
+              understand concepts, and improve quickly.
+            </p>
+          </div>
+          <div class="offer-card">
+            <span class="offer-num">04</span>
+            <div class="offer-icon-wrap">&#128202;</div>
+            <h3>Progress Tracking</h3>
+            <p>
+              Track performance over time with clear insights into your
+              strengths and weak areas — always know where you stand.
+            </p>
+          </div>
+          <div class="offer-card">
+            <span class="offer-num">05</span>
+            <div class="offer-icon-wrap">&#127891;</div>
+            <h3>Online Mentorship</h3>
+            <p>
+              Get guidance from experienced mentors even for a single topic —
+              personalised support whenever you need clarity.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="helps-section">
+        <div class="section-header">
+          <span class="section-label">Impact</span>
+          <h2 class="section-title">How Praxes Helps <span>You Grow</span></h2>
+          <div class="section-underline"></div>
+          <p class="section-subtitle" style="margin-top: 1rem">
+            Designed for every stakeholder in a student's journey — from the
+            classroom to the home.
+          </p>
+        </div>
+        <div class="helps-grid">
+          <div class="helps-card">
+            <span class="helps-audience-tag">For Students</span>
+            <h3>Build Strong Study Habits</h3>
+            <p>
+              Praxes helps students build strong study habits through regular
+              practice, instant answers, topic-wise and full-length tests, and
+              continuous progress tracking. Students can get topic-wise guidance
+              from experienced mentors wherever they need help or clarity. It
+              improves understanding, boosts confidence, and makes learning more
+              disciplined and result-oriented.
+            </p>
+          </div>
+          <div class="helps-card">
+            <span class="helps-audience-tag">For Parents</span>
+            <h3>Clear Visibility &amp; Full Support</h3>
+            <p>
+              Praxes gives parents clear visibility of their child's progress
+              and offers a complete study solution under one roof. With
+              structured learning, practice, tests, and performance tracking,
+              parents can easily understand strengths, weaknesses, and overall
+              development — without needing to ask.
+            </p>
+          </div>
+          <div class="helps-card">
+            <span class="helps-audience-tag">For Schools &amp; Coachings</span>
+            <h3>A Complete Academic System</h3>
+            <p>
+              Praxes supports institutions with a complete academic system
+              including practice, unlimited tests, instant results, and
+              customised questions at all levels. It helps improve teaching
+              efficiency, saves time, and delivers better academic results
+              through data-driven insights for every classroom.
+            </p>
+          </div>
+        </div>
+        <p class="helps-tagline">
+          Praxes is not just a learning platform — it is a
+          <span>system designed to improve performance at every level.</span>
+        </p>
+      </section>
+
+      <section class="subscriptions-section">
+        <div class="section-header">
+          <span class="section-label">Plans</span>
+          <h2 class="section-title">Popular <span>Subscriptions</span></h2>
+          <div class="section-underline"></div>
+          <p class="section-subtitle" style="margin-top: 1rem">
+            Simple, affordable plans that give you access to everything Praxes
+            has to offer.
+          </p>
+        </div>
+        <div class="sub-cards">
+          <div class="card">
+            <div class="price"><h4>INR 99 /-</h4></div>
+            <h2 class="chapter">Test Series</h2>
+            <h4 class="sub-topic">
+              Mock Test / Daily Practice Tests / Weekly Progress Tracking
+            </h4>
+            <button class="join-btn">Join Plan</button>
+          </div>
+          <div class="card">
+            <div class="price"><h4>INR 999 /-</h4></div>
+            <h2 class="chapter">All Subjects (Yearly Plan)</h2>
+            <h4 class="sub-topic">
+              Improve your grades with the Praxes yearly plan — Unlimited
+              Practice Questions / Time Bounded Tests / Notes / Weekly &amp;
+              Monthly Reports
+            </h4>
+            <button class="join-btn">Join Plan</button>
+          </div>
+          <div class="card">
+            <div class="price"><h4>INR 350 /-</h4></div>
+            <h2 class="chapter">All Subjects (Monthly Plan)</h2>
+            <h4 class="sub-topic">
+              All subjects monthly plan — Unlimited Practice Questions, Mock
+              Tests, Complete Syllabus Test Series
+            </h4>
+            <button class="join-btn">Join Plan</button>
+          </div>
+        </div>
+        <div class="sub-cta">
+          <a class="sub-cta-btn primary" href="subscription.html">Explore All Plans</a>
+          <a class="sub-cta-btn outline" href="classes.html">Browse Classes</a>
+        </div>
+      </section>
+
+      <section class="founder-section">
+        <div class="section-header">
+          <span class="section-label">Our Story</span>
+          <h2 class="section-title" style="color: white">
+            A Message from <span>Our Founder</span>
+          </h2>
+          <div class="section-underline"></div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-avatar">&#127891;</div>
+          <div class="founder-content">
+            <span class="quote-mark">"</span>
+            <p class="founder-message">
+              At Praxes, I believed that every student deserves the right tools
+              to grow — not just for exams, but for life. We built Praxes to
+              bridge the gap between potential and performance. Through
+              consistent practice, instant feedback, and personalised
+              mentorship, we want every student to walk into their exam room
+              with unshakable confidence. Learning is not about memorising — it
+              is about understanding, practising, and growing every single day.
+              This is not just a platform — it is our commitment to your
+              success, and we are honoured to be part of your journey.
+            </p>
+            <div class="founder-name">Founder, Praxes</div>
+            <div class="founder-role">
+              Raipur, Chhattisgarh &middot; Est. 2020
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials-section">
+        <div class="section-header">
+          <span class="section-label">Reviews</span>
+          <h2 class="section-title">What Our <span>Students Say</span></h2>
+          <div class="section-underline"></div>
+          <p class="section-subtitle" style="margin-top: 1rem">
+            Real stories from students who transformed their learning with
+            Praxes.
+          </p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">
+              Praxes has completely changed the way I study. The daily practice
+              sessions keep me consistent and the instant answers help me
+              understand where I go wrong immediately. My Math scores have
+              improved so much!
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">A</div>
+              <div>
+                <p class="author-name">Aarav Sharma</p>
+                <span class="author-class">Class VIII &middot; Raipur</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">
+              I used to struggle with Science, but after using Praxes for two
+              months, I scored 92 in my unit test! The topic-wise tests really
+              helped me focus on my weak chapters. Highly recommended for every
+              student.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">P</div>
+              <div>
+                <p class="author-name">Priya Verma</p>
+                <span class="author-class">Class X &middot; Raipur</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">
+              The progress tracking feature is brilliant. As a parent, I can now
+              clearly see which subjects my son needs to work on. Praxes gives
+              complete transparency and that gives me real peace of mind.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">R</div>
+              <div>
+                <p class="author-name">Rekha Gupta</p>
+                <span class="author-class">Parent &middot; Class VII</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">
+              The mentorship sessions on Praxes are what truly set it apart.
+              When I was confused about algebraic expressions, my mentor
+              explained it so clearly within the same day. I felt very supported
+              throughout.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">K</div>
+              <div>
+                <p class="author-name">Kartik Mishra</p>
+                <span class="author-class">Class IX &middot; Raipur</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">
+              Our institute integrated Praxes and the results speak for
+              themselves. Students are more engaged, teachers can track
+              performance easily, and our overall pass rate has improved. A
+              complete academic solution!
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">S</div>
+              <div>
+                <p class="author-name">Sunita Patel</p>
+                <span class="author-class">Coaching Director &middot; Raipur</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">
+              Praxes makes studying fun! Unlimited tests mean I can practice as
+              many times as I want without running out of questions. My
+              confidence before exams has gone up a lot — I actually look
+              forward to tests now.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">N</div>
+              <div>
+                <p class="author-name">Naina Sahu</p>
+                <span class="author-class">Class VI &middot; Raipur</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <div class="contacts">
+          <div class="contact-details">
+            <img src="phone.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Phone</h4>
+              <h5>+91 62602 03132</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="mail.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Email</h4>
+              <h5>praxes24@gmail.com</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="map.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Address</h4>
+              <h5>
+                1st floor, Srishti's Palazzo commercial complex, St. Xavier
+                School Road, Raipur, Chhattisgarh
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-platforms">
+        <h3>Our Platforms</h3>
+        <div class="platform">
+          <img src="Facebook.svg" alt="" />
+          <h4>Facebook</h4>
+        </div>
+        <div class="platform">
+          <img src="instagram.svg" alt="" />
+          <h4>Instagram</h4>
+        </div>
+        <div class="platform">
+          <img src="LinkedIn.svg" alt="" />
+          <h4>LinkedIn</h4>
+        </div>
+      </div>
+      <div class="what-offer">
+        <h3>Important Links</h3>
+        <div class="offers">
+          <a href="disclaimer"><h4>Disclaimer</h4></a>
+          <a href="privacy"><h4>Privacy</h4></a>
+          <a href="refund_policy"><h4>Refund Policy</h4></a>
+          <a href="terms_and_condition"><h4>Terms and Conditions</h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

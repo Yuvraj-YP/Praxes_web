@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Feedback — Praxes</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="feedback.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    <header id="header">
+      <section id="logo">
+        <img src="logo1.png" alt="Praxes Logo" />
+        <div class="logo-name">
+          <a href="index.html">
+            <h3>PRAXES</h3>
+            <h5>Practice. Test.</h5>
+            <h5>Mentor. Succeed.</h5>
+          </a>
+        </div>
+      </section>
+      <div class="menu-container">
+        <div class="menu-open-close">
+          <img
+            class="menuImg"
+            src="menu.svg"
+            alt="menu"
+            onclick="event.preventDefault()"
+          />
+        </div>
+        
+        <section id="mobile-menu">
+          <div id="user-nav-block-mobile" class="auth-hidden" style="width: 100%;">
+            <div class="mobile-profile-header">
+              <div class="profile-trigger" style="cursor: default;">👤</div>
+              <span style="font-weight: 700; color: #2d3748; font-size: 0.95rem;">My Dashboard</span>
+            </div>
+            <a href="progressTracking.html"><div class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📊 Progress Tracking</div></a>
+            <a href="Badges.html"><div class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📜 My Certificates</div></a>
+            <a href="feedback.html"><div class="btn active" style="text-align: left; padding-left: 1.5rem; width: 100%;">💬 Send Feedback</div></a>
+            <button class="btn logout-item" onclick="simulateLogout()" style="text-align: left; padding-left: 1.5rem; width: 100%; font-weight: 700;">🚪 Log Out</button>
+            <div class="dropdown-divider" style="margin: 0.5rem 0;"></div>
+          </div>
+
+          <div id="guest-nav-block-mobile" style="width: 100%; display: flex; flex-direction: column;">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+        </section>
+
+        <section id="menu">
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+          
+          <div id="guest-nav-block">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <div id="user-nav-block" class="profile-wrapper auth-hidden">
+            <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
+            <div class="dropdown-menu" id="profileDropdownCard">
+              <a href="progressTracking.html" class="dropdown-item">📊 Progress Tracking</a>
+              <a href="Badges.html" class="dropdown-item">📜 My Certificates</a>
+              <a href="feedback.html" class="dropdown-item active">💬 Send Feedback</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="offers-section" style="padding-top: 2rem; padding-bottom: 0;">
+        <div class="section-header">
+          <span class="section-label">Connect With Us</span>
+          <h2 class="section-title">Share Your <span>Feedback</span></h2>
+          <div class="section-underline"></div>
+        </div>
+      </section>
+
+      <form id="praxesFeedbackForm" onsubmit="handleFeedbackSubmit(event)">
+        <div class="feedback-form-container">
+          
+          <div class="feedback-split-grid">
+            
+            <div class="form-column-left">
+              <div class="form-field-group">
+                <label for="candidateName">Full Name of Candidate</label>
+                <input 
+                  type="text" 
+                  id="candidateName" 
+                  class="form-input-element" 
+                  placeholder="Enter your name..." 
+                  required 
+                />
+              </div>
+
+              <div class="form-field-group">
+                <label for="candidateEmail">Email Address</label>
+                <input 
+                  type="email" 
+                  id="candidateEmail" 
+                  class="form-input-element" 
+                  placeholder="name@example.com" 
+                  required 
+                />
+              </div>
+            </div>
+
+            <div class="form-column-right">
+              <div class="form-field-group" style="flex: 1; margin-bottom: 0;">
+                <label for="candidateMessage">Your Feedback / Review</label>
+                <textarea 
+                  id="candidateMessage" 
+                  class="form-textarea-element" 
+                  placeholder="Tell us about your learning experience on Praxes..." 
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+          </div>
+
+          <button type="submit" class="feedback-submit-btn">🚀 Submit Feedback</button>
+          
+        </div>
+      </form>
+
+      <footer id="footer">
+        <div class="contact-us">
+          <h3>Contact Us</h3>
+          <div class="contacts">
+            <div class="contact-details">
+              <img src="phone.svg" alt="" />
+              <div class="contact">
+                <h4 class="contact-title">Phone</h4>
+                <h5>+91 62602 03132</h5>
+              </div>
+            </div>
+            <div class="contact-details">
+              <img src="mail.svg" alt="" />
+              <div class="contact">
+                <h4 class="contact-title">Email</h4>
+                <h5>praxes24@gmail.com</h5>
+              </div>
+            </div>
+            <div class="contact-details">
+              <img src="map.svg" alt="" />
+              <div class="contact">
+                <h4 class="contact-title">Address</h4>
+                <h5>
+                  1st floor, Srishti's Palazzo commercial complex, St. Xavier
+                  School Road, Raipur, Chhattisgarh
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="social-platforms">
+          <h3>Our Platforms</h3>
+          <div class="platform">
+            <img src="Facebook.svg" alt="" />
+            <h4>Facebook</h4>
+          </div>
+          <div class="platform">
+            <img src="instagram.svg" alt="" />
+            <h4>Instagram</h4>
+          </div>
+          <div class="platform">
+            <img src="LinkedIn.svg" alt="" />
+            <h4>LinkedIn</h4>
+          </div>
+        </div>
+        <div class="what-offer">
+          <h3>Important Links</h3>
+          <div class="offers">
+            <a href="disclaimer"><h4>Disclaimer</h4></a>
+            <a href="privacy"><h4>Privacy</h4></a>
+            <a href="refund_policy"><h4>Refund Policy</h4></a>
+            <a href="terms_and_condition"><h4>Terms and Conditions</h4></a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+
+    <script>
+      // CLIENT-SIDE VALIDATION & INTERACTIVE CONFIRMATION POPUP
+      function handleFeedbackSubmit(event) {
+        event.preventDefault();
+        
+        const nameVal = document.getElementById('candidateName').value.trim();
+        const emailVal = document.getElementById('candidateEmail').value.trim();
+        const messageVal = document.getElementById('candidateMessage').value.trim();
+
+        if(nameVal === "" || emailVal === "" || messageVal === "") {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'All input parameters are mandatory. Fields cannot be processed empty!',
+            confirmButtonColor: '#3182ce'
+          });
+          return;
+        }
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Thank You For Submitting!',
+          text: 'Your performance evaluation feedback has been logged securely. We appreciate your partnership with Praxes.',
+          confirmButtonColor: '#3182ce'
+        }).then((result) => {
+          document.getElementById('praxesFeedbackForm').reset();
+        });
+      }
+    </script>
+  </body>
+</html>

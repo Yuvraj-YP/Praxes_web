@@ -1,0 +1,282 @@
+@font-face {
+  font-family: "Nunito";
+  src: url(Nunito-VariableFont_wght.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* --- Progress Analytics Dashboard Core Layout --- */
+.analytics-container {
+width: 100%;
+max-width: 1000px;
+margin: 0 auto;
+padding: 2.5rem 1.5rem;
+box-sizing: border-box;
+}
+
+/* Student Profile Metadata Section */
+.student-profile-bar {
+background: #1a1a2e; 
+border-radius: 12px;
+padding: 1.5rem 2rem;
+color: #ffffff;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1.5rem;
+margin-bottom: 1.5rem;
+}
+
+.profile-meta-item span {
+display: block;
+font-size: 0.75rem;
+color: #a9e3d0;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 0.25rem;
+font-weight: 700;
+}
+
+.profile-meta-item h3 {
+margin: 0;
+font-size: 1.15rem;
+font-weight: 800;
+}
+
+/* Static Mentor Remarks Box Configuration */
+.mentor-remarks-static-card {
+background: #f7fafc;
+border-left: 4px solid #0f6e56; /* Accent strip matching the Praxes emerald brand color */
+border-top: 1px solid #e2e8f0;
+border-right: 1px solid #e2e8f0;
+border-bottom: 1px solid #e2e8f0;
+border-radius: 0 12px 12px 0;
+padding: 1.25rem 1.75rem;
+margin-bottom: 2rem;
+}
+
+.mentor-remarks-static-card h4 {
+margin: 0 0 0.5rem 0;
+font-size: 0.85rem;
+color: #4a5568;
+text-transform: uppercase;
+letter-spacing: 0.75px;
+font-weight: 800;
+}
+
+/* Italicized backend remark content string placeholder */
+.mentor-remarks-static-card p {
+margin: 0;
+font-size: 0.95rem;
+color: #2d3748;
+font-style: italic;
+line-height: 1.5;
+font-weight: 600;
+}
+
+/* --- Dashboard Navigation Tabs --- */
+.analytics-tabs-nav {
+display: flex;
+gap: 0.5rem;
+border-bottom: 2px solid #e2e8f0;
+margin-bottom: 2rem;
+padding-bottom: 1px;
+}
+
+.tab-trigger-btn {
+background: transparent;
+border: none;
+outline: none;
+padding: 0.75rem 1.5rem;
+font-size: 0.95rem;
+font-weight: 700;
+color: #718096;
+cursor: pointer;
+border-bottom: 2px solid transparent;
+margin-bottom: -2px;
+transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab-trigger-btn:hover { color: #1a1a2e; }
+.tab-trigger-btn.active-tab { color: #0f6e56; border-color: #0f6e56; }
+
+.analytics-tab-panel { display: none; }
+.analytics-tab-panel.active-panel { display: block; animation: panelFadeIn 0.3s ease; }
+
+@keyframes panelFadeIn {
+from { opacity: 0; transform: translateY(8px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-card-section {
+background: #ffffff;
+border: 1px solid #e2e8f0;
+border-radius: 16px;
+padding: 2rem;
+}
+
+.dashboard-card-section h2 {
+font-size: 1.25rem;
+color: #1a1a2e;
+margin-bottom: 1.5rem;
+font-weight: 800;
+}
+
+/* --- TAB 1: MULTI-SUBJECT BAR COLUMNS --- */
+.multi-subject-chart-deck { display: flex; flex-direction: column; gap: 1.5rem; }
+.subject-chart-row-item { background: #f8fbfd; border: 1px solid #edf2f7; border-radius: 12px; padding: 1.5rem; }
+.subject-chart-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.subject-chart-info h4 { margin: 0; font-size: 1rem; font-weight: 800; color: #2d3748; }
+
+.legend-indicator { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 700; color: #718096; }
+.legend-indicator::before { content: ""; width: 10px; height: 10px; border-radius: 50%; }
+.math-indicator::before { background-color: #4a5568; }
+.science-indicator::before { background-color: #0f6e56; }
+.english-indicator::before { background-color: #3182ce; }
+
+.chart-axis-container-bars {
+position: relative;
+height: 160px;
+border-left: 2px solid #cbd5e0;
+border-bottom: 2px solid #cbd5e0;
+margin-left: 3.5rem;
+display: flex;
+justify-content: space-around;
+align-items: flex-end;
+padding: 0 1rem;
+}
+
+.y-axis-labels {
+position: absolute;
+left: -3.5rem;
+height: 100%;
+width: 2.5rem;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+text-align: right;
+font-size: 0.75rem;
+color: #718096;
+font-weight: 700;
+bottom: 0;
+}
+
+.chart-bar-column-group { display: flex; flex-direction: column; align-items: center; width: 14%; height: 100%; justify-content: flex-end; }
+.chart-pillar-bar { width: 100%; max-width: 40px; border-radius: 4px 4px 0 0; transition: background-color 0.2s ease, transform 0.2s ease; position: relative; }
+
+.math-pillar { background-color: #4a5568; } .math-pillar:hover { background-color: #2d3748; transform: scaleX(1.05); }
+.science-pillar { background-color: #0f6e56; } .science-pillar:hover { background-color: #6b9e8f; transform: scaleX(1.05); }
+.english-pillar { background-color: #3182ce; } .english-pillar:hover { background-color: #2b6cb0; transform: scaleX(1.05); }
+
+.pillar-bar-value { position: absolute; top: -1.3rem; width: 100%; text-align: center; font-size: 0.75rem; font-weight: 800; color: #1a1a2e; }
+.node-x-label { margin-top: 0.5rem; font-size: 0.75rem; font-weight: 700; color: #4a5568; white-space: nowrap; }
+
+/* --- TAB 2: MINI DYNAMIC CALENDAR ARCHITECTURE --- */
+.calendar-scroller-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #f8fbfd;
+border: 1px solid #edf2f7;
+border-radius: 12px;
+padding: 1rem 1.5rem;
+margin-bottom: 1.5rem;
+}
+
+.calendar-title-wrap h3 { margin: 0; font-size: 1.2rem; font-weight: 800; color: #1a1a2e; }
+.calendar-title-wrap span { font-size: 0.85rem; font-weight: 700; color: #718096; }
+.scroll-controls-box { display: flex; gap: 0.5rem; }
+
+.scroll-nav-btn {
+background: #ffffff;
+border: 1px solid #cbd5e0;
+border-radius: 6px;
+width: 40px;
+height: 36px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.85rem;
+cursor: pointer;
+color: #4a5568;
+transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.scroll-nav-btn:hover { background-color: #0f6e56; color: #ffffff; border-color: #0f6e56; }
+
+.mini-calendar-wrapper-box {
+position: relative;
+background: #ffffff;
+border: 1px solid #edf2f7;
+border-radius: 12px;
+padding: 1.5rem;
+max-width: 340px;
+margin: 0 auto;
+}
+
+.month-cells-container { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+
+.activity-cell {
+width: 32px;
+height: 32px;
+border-radius: 4px;
+background-color: #cbd5e0;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.75rem;
+font-weight: 700;
+color: #4a5568;
+transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+cursor: pointer;
+position: relative;
+}
+.activity-cell:hover { transform: scale(1.2); z-index: 5; }
+
+.activity-cell.stage-1 { background-color: #a3d3c4; color: #1a1a2e; }
+.activity-cell.stage-2 { background-color: #89beae; color: #1a1a2e; }
+.activity-cell.stage-3 { background-color: #0f6e56; color: #ffffff; }
+.activity-cell.stage-4 { background-color: #4d7a6d; color: #ffffff; }
+
+.big-dark-tooltip {
+position: absolute;
+bottom: 125%;
+left: 50%;
+transform: translateX(-50%);
+background-color: #1a1a2e;
+color: #ffffff;
+padding: 0.6rem 1rem;
+border-radius: 8px;
+font-size: 0.8rem;
+line-height: 1.4;
+white-space: nowrap;
+box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.15s ease, visibility 0.15s ease;
+z-index: 99;
+text-align: left;
+border: 1px solid #4d7a6d;
+}
+.big-dark-tooltip strong { color: #a9e3d0; display: block; font-size: 0.85rem; margin-bottom: 0.15rem; }
+.activity-cell:hover .big-dark-tooltip { opacity: 1; visibility: visible; }
+
+.empty-month-notice-box { display: none; text-align: center; padding: 3rem 1rem; color: #718096; font-weight: 700; font-size: 1rem; }
+
+.activity-legend { display: flex; align-items: center; gap: 0.4rem; justify-content: center; margin-top: 1.5rem; font-size: 0.72rem; color: #718096; font-weight: 600; }
+.activity-legend .activity-cell { cursor: default; width: 14px; height: 16px; font-size: 0; }
+.activity-legend .activity-cell:hover { transform: none; box-shadow: none; }
+
+/* --- TAB 3: ATTENDANCE BAR PILLARS STYLING --- */
+.bar-chart-container { display: flex; justify-content: space-around; align-items: flex-end; height: 220px; background: #f8fbfd; border-radius: 12px; padding: 2rem 1rem 1rem; border: 1px solid #edf2f7; }
+.bar-column-group { display: flex; flex-direction: column; align-items: center; width: 15%; height: 100%; justify-content: flex-end; }
+.bar-pillar { width: 100%; max-width: 45px; background-color: #0f6e56; border-radius: 6px 6px 0 0; transition: background-color 0.2s ease, transform 0.2s ease; position: relative; }
+.bar-pillar:hover { background-color: #6b9e8f; transform: scaleX(1.05); }
+.bar-pillar-value { position: absolute; top: -1.5rem; width: 100%; text-align: center; font-size: 0.8rem; font-weight: 800; color: #1a1a2e; }
+.bar-pillar-value { position: absolute; top: -1.5rem; width: 100%; text-align: center; font-size: 0.8rem; font-weight: 800; color: #1a1a2e; }
+.bar-axis-title { margin-top: 0.75rem; font-size: 0.8rem; font-weight: 700; color: #4a5568; }
+
+@media (max-width: 768px) {
+.analytics-container { padding: 1.5rem 1rem; }
+.dashboard-card-section { padding: 1.25rem; }
+.chart-axis-container-bars { margin-left: 2.5rem; padding: 0 0.5rem; }
+.tab-trigger-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
+}

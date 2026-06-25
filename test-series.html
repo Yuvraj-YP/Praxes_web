@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Series — Praxes</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chapters_test.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    <header id="header">
+      <section id="logo">
+        <img src="logo1.png" alt="Praxes Logo" />
+        <div class="logo-name">
+          <a href="index.html">
+            <h3>PRAXES</h3>
+            <h5>Practice. Test.</h5>
+            <h5>Mentor. Succeed.</h5>
+          </a>
+        </div>
+      </section>
+      <div class="menu-container">
+        <div class="menu-open-close">
+          <img
+            class="menuImg"
+            src="menu.svg"
+            alt="menu"
+            onclick="event.preventDefault()"
+          />
+        </div>
+        
+        <section id="mobile-menu">
+          <div id="user-nav-block-mobile" class="auth-hidden" style="width: 100%;">
+            <div class="mobile-profile-header">
+              <div class="profile-trigger" style="cursor: default;">👤</div>
+              <span style="font-weight: 700; color: #2d3748; font-size: 0.95rem;">My Dashboard</span>
+            </div>
+            <a href="progressTracking.html"><div class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📊 Progress Tracking</div></a>
+            <a href="Badges.html"><div class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📛 My Badges</div></a>
+            <a href="feedback.html"><div class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">💬 Send Feedback</div></a>
+            <button class="btn logout-item" onclick="simulateLogout()" style="text-align: left; padding-left: 1.5rem; width: 100%; font-weight: 700;">🚪 Log Out</button>
+            <div class="dropdown-divider" style="margin: 0.5rem 0;"></div>
+          </div>
+
+          <div id="guest-nav-block-mobile" style="width: 100%; display: flex; flex-direction: column;">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn active">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+        </section>
+
+        <section id="menu">
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn active">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+          
+          <div id="guest-nav-block">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <div id="user-nav-block" class="profile-wrapper auth-hidden">
+            <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
+            <div class="dropdown-menu" id="profileDropdownCard">
+              <a href="progressTracking.html" class="dropdown-item">📊 Progress Tracking</a>
+              <a href="Badges.html" class="dropdown-item">📛 My Badges</a>
+              <a href="feedback.html" class="dropdown-item">💬 Send Feedback</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="offers-section" style="padding-top: 3rem;">
+        <div class="section-header">
+          <span class="section-label">Assessment Portal</span>
+          <h2 class="section-title">Praxes <span>Test Series</span></h2>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="top-action-bar" style="display: flex; flex-direction: column; gap: 1.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02); align-items: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
+            <div class="level-selector-wrap" style="margin: 0; display: inline-flex; justify-content: center; gap: 1.5rem;">
+              <label class="level-radio-label">
+                <input type="radio" name="test-mode" value="chapters" checked onchange="handleModeSwitch(this.value)">
+                Chapter-wise Test
+              </label>
+              <label class="level-radio-label">
+                <input type="radio" name="test-mode" value="mixed" onchange="handleModeSwitch(this.value)">
+                Mixed Chapter Test
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapters-grid" id="chapterWiseContainer">
+          
+          <div class="chapter-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 250px;">
+            <div class="card-watermark">01</div>
+            <div>
+              <h3 class="card-chapter-name" style="margin: 0.35rem 0 0.15rem 0; font-size: 1.25rem; position: relative; z-index: 1;">Real Numbers</h3>
+              <p style="font-size: 0.85rem; color: #718096; margin-bottom: 1rem; position: relative; z-index: 1;">
+                Test your knowledge on divisors, fundamental theorems, and proofs of irrationality.
+              </p>
+            </div>
+            <div>
+              <div class="static-reveal-section" style="position: relative; z-index: 2; width: 100%;">
+                <button onclick="openTestModal(this, '01')" class="action-chip" style="display: block; width: 100%; text-align: center; background: #edf2f7; color: #4a5568; padding: 0.6rem; border-radius: 6px; font-weight: 700; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s ease;">📝 Take Test</button>
+              </div>
+            </div>
+            <div class="hidden-topic-storage">
+              <span class="topic-item" data-url="exam.html?id=rn_m1">Real Numbers Concept Mock 01</span>
+              <span class="topic-item" data-url="exam.html?id=rn_m2">Fundamental Theorems Evaluation 02</span>
+              <span class="topic-item" data-url="exam.html?id=rn_m3">Irrationality Assertion Challenge 03</span>
+            </div>
+          </div>
+
+          <div class="chapter-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 250px;">
+            <div class="card-watermark">02</div>
+            <div>
+              <h3 class="card-chapter-name" style="margin: 0.35rem 0 0.15rem 0; font-size: 1.25rem; position: relative; z-index: 1;">Polynomials</h3>
+              <p style="font-size: 0.85rem; color: #718096; margin-bottom: 1rem; position: relative; z-index: 1;">
+                Evaluate zeroes, expression forms, coefficient tracking, and parabolic mapping properties.
+              </p>
+            </div>
+            <div>
+              <div class="static-reveal-section" style="position: relative; z-index: 2; width: 100%;">
+                <button onclick="openTestModal(this, '02')" class="action-chip" style="display: block; width: 100%; text-align: center; background: #edf2f7; color: #4a5568; padding: 0.6rem; border-radius: 6px; font-weight: 700; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s ease;">📝 Take Test</button>
+              </div>
+            </div>
+            <div class="hidden-topic-storage">
+              <span class="topic-item" data-url="exam.html?id=poly_m1">Zeroes & Coefficients Mapping 01</span>
+              <span class="topic-item" data-url="exam.html?id=poly_m2">Quadratic Expressions Challenge 02</span>
+            </div>
+          </div>
+
+          <div class="chapter-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 250px;">
+            <div class="card-watermark">03</div>
+            <div>
+              <h3 class="card-chapter-name" style="margin: 0.35rem 0 0.15rem 0; font-size: 1.25rem; position: relative; z-index: 1;">Quadratic Equation</h3>
+              <p style="font-size: 0.85rem; color: #718096; margin-bottom: 1rem; position: relative; z-index: 1;">
+                Solve standard degree formulations, roots validation, and practical math challenges.
+              </p>
+            </div>
+            <div>
+              <div class="static-reveal-section" style="position: relative; z-index: 2; width: 100%;">
+                <button onclick="openTestModal(this, '03')" class="action-chip" style="display: block; width: 100%; text-align: center; background: #edf2f7; color: #4a5568; padding: 0.6rem; border-radius: 6px; font-weight: 700; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s ease;">📝 Take Test</button>
+              </div>
+            </div>
+            <div class="hidden-topic-storage">
+              <span class="topic-item" data-url="exam.html?id=quad_m1">Discriminant & Roots Assessment 01</span>
+              <span class="topic-item" data-url="exam.html?id=quad_m2">Mathematical Word Foundations 02</span>
+            </div>
+          </div>
+
+          <div class="chapter-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 250px;">
+            <div class="card-watermark">04</div>
+            <div>
+              <h3 class="card-chapter-name" style="margin: 0.35rem 0 0.15rem 0; font-size: 1.25rem; position: relative; z-index: 1;">Arithmetic Progression</h3>
+              <p style="font-size: 0.85rem; color: #718096; margin-bottom: 1rem; position: relative; z-index: 1;">
+                Analyze sequence behaviors, common differences, and structural series summations.
+              </p>
+            </div>
+            <div>
+              <div class="tier-container" style="display:none;"></div>
+              <div class="static-reveal-section" style="position: relative; z-index: 2; width: 100%;">
+                <button onclick="openTestModal(this, '04')" class="action-chip" style="display: block; width: 100%; text-align: center; background: #edf2f7; color: #4a5568; padding: 0.6rem; border-radius: 6px; font-weight: 700; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s ease;">📝 Take Test</button>
+              </div>
+            </div>
+            <div class="hidden-topic-storage">
+              <span class="topic-item" data-url="exam.html?id=ap_m1">Common Difference Analysis 01</span>
+              <span class="topic-item" data-url="exam.html?id=ap_m2">Nth Term Series Evaluation 02</span>
+            </div>
+          </div>
+
+          <div class="chapter-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 250px;">
+            <div class="card-watermark">05</div>
+            <div>
+              <h3 class="card-chapter-name" style="margin: 0.35rem 0 0.15rem 0; font-size: 1.25rem; position: relative; z-index: 1;">Coordinate Geometry</h3>
+              <p style="font-size: 0.85rem; color: #718096; margin-bottom: 1rem; position: relative; z-index: 1;">
+                Verify midpoints, cartesian distances, segment vectors, and area matrix boundaries.
+              </p>
+            </div>
+            <div>
+              <div class="static-reveal-section" style="position: relative; z-index: 2; width: 100%;">
+                <button onclick="openTestModal(this, '05')" class="action-chip" style="display: block; width: 100%; text-align: center; background: #edf2f7; color: #4a5568; padding: 0.6rem; border-radius: 6px; font-weight: 700; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s ease;">📝 Take Test</button>
+              </div>
+            </div>
+            <div class="hidden-topic-storage">
+              <span class="topic-item" data-url="exam.html?id=cg_m1">Distance Formula Geometry 01</span>
+              <span class="topic-item" data-url="exam.html?id=cg_m2">Section Ratio Verification 02</span>
+            </div>
+          </div>
+
+          <div class="chapter-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 250px;">
+            <div class="card-watermark">06</div>
+            <div>
+              <h3 class="card-chapter-name" style="margin: 0.35rem 0 0.15rem 0; font-size: 1.25rem; position: relative; z-index: 1;">Areas Related to Circles</h3>
+              <p style="font-size: 0.85rem; color: #718096; margin-bottom: 1rem; position: relative; z-index: 1;">
+                Evaluate angular sector parameters, arc variants, and circular segment boundaries.
+              </p>
+            </div>
+            <div>
+              <div class="static-reveal-section" style="position: relative; z-index: 2; width: 100%;">
+                <button onclick="openTestModal(this, '06')" class="action-chip" style="display: block; width: 100%; text-align: center; background: #edf2f7; color: #4a5568; padding: 0.6rem; border-radius: 6px; font-weight: 700; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s ease;">📝 Take Test</button>
+              </div>
+            </div>
+            <div class="hidden-topic-storage">
+              <span class="topic-item" data-url="exam.html?id=circ_m1">Sector Angle Fields Mock 01</span>
+              <span class="topic-item" data-url="exam.html?id=circ_m2">Circular Layout Segments 02</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapters-grid" id="mixedChaptersContainer" style="display: none; grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
+          <div class="chapter-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 250px; border: 2px solid #cbd5e1; background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);">
+            <div class="card-watermark" style="font-size: 5.5rem; color: rgba(49, 130, 206, 0.15);">MIX</div>
+            <div>
+              <span style="background: #ebf8ff; color: #2b6cb0; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; position: relative; z-index: 1;">Dynamic Multi-Topic Mix</span>
+              <h3 class="card-chapter-name" style="margin: 0.5rem 0 0.25rem 0; font-size: 1.4rem; color: #1a202c; position: relative; z-index: 1;">Mixed Subject Assessment</h3>
+              <p style="font-size: 0.9rem; color: #4a5568; margin-bottom: 1rem; position: relative; z-index: 1; line-height: 1.4;">
+                Launch randomized assessment matrixes spanning multiple active structural syllabus modules currently updated within your course repository.
+              </p>
+            </div>
+            <div>
+              <div class="static-reveal-section" style="position: relative; z-index: 2; width: 100%;">
+                <button onclick="openTestModal(this, 'MIX')" class="action-chip" style="display: block; width: 100%; text-align: center; background: #3182ce; color: #ffffff; padding: 0.75rem; border-radius: 6px; font-weight: 700; border: none; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 10px rgba(49, 130, 206, 0.25);">📝 Take Test</button>
+              </div>
+            </div>
+            <div class="hidden-topic-storage">
+              <span class="topic-item" data-url="exam.html?id=mixed_m1">Interdisciplinary Core Mock 01</span>
+              <span class="topic-item" data-url="exam.html?id=mixed_m2">Cross-Topic Marathon Evaluation 02</span>
+              <span class="topic-item" data-url="exam.html?id=mixed_m3">Advanced Speed Challenge 03</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="focus-overlay" id="chapterFocusOverlay" onclick="closeChapterFocus()">
+        <div class="focus-modal" onclick="event.stopPropagation()">
+          <button class="close-overlay-btn" onclick="closeChapterFocus()">&times;</button>
+          
+          <div>
+            <span id="modalTierBadge" class="modal-tier-indicator tier-paid" style="background: #ebf8ff; color: #2b6cb0; border-color: #bee3f8;">Premium Exam Track</span>
+          </div>
+          <h2 id="modalChapterTitle" style="margin: 0.25rem 0 0.5rem 0; color: #1a202c;">Available Assessments</h2>
+          
+          <div class="search-box-container">
+            <input 
+              type="text" 
+              class="modal-search-input" 
+              id="modalSearchInput" 
+              placeholder="Search available mocks in this segment..." 
+              oninput="filterModalTopics()"
+            />
+          </div>
+
+          <div class="modal-topics-wrapper" id="modalTopicsContainer">
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <div class="contacts">
+          <div class="contact-details">
+            <img src="phone.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Phone</h4>
+              <h5>+91 62602 03132</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="mail.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Email</h4>
+              <h5>praxes24@gmail.com</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="map.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Address</h4>
+              <h5>
+                1st floor, Srishti's Palazzo commercial complex, St. Xavier
+                School Road, Raipur, Chhattisgarh
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-platforms">
+        <h3>Our Platforms</h3>
+        <div class="platform">
+          <img src="Facebook.svg" alt="" />
+          <h4>Facebook</h4>
+        </div>
+        <div class="platform">
+          <img src="instagram.svg" alt="" />
+          <h4>Instagram</h4>
+        </div>
+        <div class="platform">
+          <img src="LinkedIn.svg" alt="" />
+          <h4>LinkedIn</h4>
+        </div>
+      </div>
+      <div class="what-offer">
+        <h3>Important Links</h3>
+        <div class="offers">
+          <a href="disclaimer"><h4>Disclaimer</h4></a>
+          <a href="privacy"><h4>Privacy</h4></a>
+          <a href="refund_policy"><h4>Refund Policy</h4></a>
+          <a href="terms_and_condition"><h4>Terms and Conditions</h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+
+    <script>
+      // DYNAMIC LAYOUT SWITCHER FOR TEST MODES
+      function handleModeSwitch(selectedMode) {
+        const chapterBlock = document.getElementById('chapterWiseContainer');
+        const mixedBlock = document.getElementById('mixedChaptersContainer');
+        
+        if (selectedMode === 'mixed') {
+          chapterBlock.style.display = 'none';
+          mixedBlock.style.display = 'grid';
+        } else {
+          chapterBlock.style.display = 'grid';
+          mixedBlock.style.display = 'none';
+        }
+      }
+
+      // ASSESSMENT MODAL SYSTEM
+      function openTestModal(buttonElement, codeToken) {
+        const parentCard = buttonElement.closest('.chapter-card');
+        const entityTitle = parentCard.querySelector('.card-chapter-name').innerText;
+        const storedMocks = parentCard.querySelectorAll('.hidden-topic-storage .topic-item');
+        
+        const overlay = document.getElementById('chapterFocusOverlay');
+        const modalContainer = document.getElementById('modalTopicsContainer');
+        
+        // MODIFIED: 'CH ' string concatenation has been completely removed
+        document.getElementById('modalChapterTitle').innerText = entityTitle;
+        
+        document.getElementById('modalSearchInput').value = ''; 
+        modalContainer.innerHTML = '';
+        
+        if(storedMocks.length === 0) {
+          modalContainer.innerHTML = '<p style="color:#718096; text-align:center; padding:1rem;">No mock assessments populated for this track yet.</p>';
+        } else {
+          storedMocks.forEach(mock => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'modal-topic-item';
+            
+            const anchor = document.createElement('a');
+            anchor.href = mock.getAttribute('data-url');
+            anchor.innerText = mock.innerText;
+            
+            itemDiv.appendChild(anchor);
+            modalContainer.appendChild(itemDiv);
+          });
+        }
+
+        overlay.classList.add('active');
+      }
+
+      function closeChapterFocus() {
+        document.getElementById('chapterFocusOverlay').classList.remove('active');
+      }
+
+      function filterModalTopics() {
+        const query = document.getElementById('modalSearchInput').value.toLowerCase();
+        const items = document.querySelectorAll('#modalTopicsContainer .modal-topic-item');
+        
+        items.forEach(item => {
+          const text = item.innerText.toLowerCase();
+          item.style.display = text.includes(query) ? 'block' : 'none';
+        });
+      }
+    </script>
+  </body>
+</html>
