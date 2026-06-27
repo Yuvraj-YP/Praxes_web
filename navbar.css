@@ -1,5 +1,5 @@
 /* =========================================================================
-   NAVBAR — PRAXES
+   NAVBAR — PRAXES GLOBAL ARCHITECTURE
    ========================================================================= */
 
 @font-face {
@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-   #header {
+#header {
   height: 10vh;
   min-height: 64px;
   width: 100vw;
@@ -88,7 +88,7 @@
   text-decoration: none;
 }
 
-#header #menu a .btn,
+#header #menu a .btn, 
 #header #menu .btn {
   background: none;
   border: none;
@@ -104,19 +104,18 @@
   font-family: "Nunito";
 }
 
-#header #menu a .btn:hover,
+#header #menu a .btn:hover, 
 #header #menu .btn:hover {
   background-color: #a9e3d0;
   color: #1a1a2e;
 }
 
-#header #menu a .btn.active,
+#header #menu a .btn.active, 
 #header #menu .btn.active {
   background-color: #0f6e56;
   color: #ffffff;
 }
 
-/* Base adjustment overrides preventing parent capsules from flattening floating layouts */
 #header #menu .profile-wrapper {
   background: transparent !important;
   border: none !important;
@@ -124,16 +123,15 @@
   margin-left: 0.5rem;
 }
 
-/* ---- Mobile Hamburger ---- */
-#mobile-menu {
-  display: none;
-}
-
+/* ---- Fallback Hidden on Desktop ---- */
+#mobile-menu, 
 .menu-open-close {
   display: none;
 }
 
-/* ---- Mobile Breakpoint ---- */
+/* =========================================================================
+   📱 MOBILE RESPONSIVE MEDIA BREAKPOINT SYSTEM
+   ========================================================================= */
 @media (max-width: 750px) {
   #header {
     height: 9vh;
@@ -145,6 +143,7 @@
     display: none;
   }
 
+  /* ---- Hamburger Button Container ---- */
   #header .menu-container .menu-open-close {
     height: 2.6rem;
     width: 2.6rem;
@@ -160,11 +159,12 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
   }
 
-  #header .menu-container .menu-open-close:hover {
-    background: #0f6e56;
+  #header .menu-container .menu-open-close.is-open {
+    transform: translateY(-50%) rotate(90deg);
+    background-color: #1a1a2e;
   }
 
   #header .menu-container .menu-open-close img {
@@ -172,41 +172,63 @@
     width: 55%;
     user-select: none;
     -webkit-user-drag: none;
+    transition: filter 0.25s ease;
   }
 
+  #header .menu-container .menu-open-close.is-open img {
+    filter: invert(1) brightness(10);
+  }
+
+  /* ---- Deep Green Theme Glassmorphism Dropdown Drawer ---- */
   #header .menu-container #mobile-menu {
-    height: 0;
-    width: 92vw;
-    background: #ffffff;
-    border: 1.5px solid #d4ede5;
-    box-shadow: 0 8px 32px rgba(26, 26, 46, 0.12);
-    border-radius: 16px;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    gap: 6px;
-    padding: 1rem;
     position: absolute;
     top: calc(9vh + 8px);
     right: 4vw;
-    overflow-y: auto; /* Ensures long dashboard link subsets scroll smoothly if expanded on narrow devices */
-    opacity: 0;
+    width: 92vw;
+    max-height: 75vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 1rem;
+    border-radius: 16px;
     z-index: 105;
+    box-sizing: border-box;
+
+    background: rgba(120, 245, 213, 0.333);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 237, 229, 0.25);
+    box-shadow: 0 12px 32px rgba(15, 110, 86, 0.25);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px) scale(0.98);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                visibility 0.3s;
+  }
+
+  #header .menu-container #mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
   }
 
   #header .menu-container #mobile-menu a {
     text-decoration: none;
   }
 
-  #header .menu-container #mobile-menu a .btn,
+  #header .menu-container #mobile-menu a .btn, 
   #header .menu-container #mobile-menu .btn {
     background: none;
     border: none;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
-    color: #1a1a2e;
+    color: rgba(0, 0, 0, 0.9);
     padding: 0.9rem 1rem;
     width: 100%;
     text-align: left;
@@ -217,10 +239,62 @@
     box-sizing: border-box;
   }
 
-  #header .menu-container #mobile-menu a .btn:hover,
-  #header .menu-container #mobile-menu a .btn.active,
-  #header .menu-container #mobile-menu .btn:hover {
-    background-color: #f3faf7;
-    color: #0f6e56;
+  /* ---- Selected / Hovered Black & White High Contrast Actions ---- */
+  #header .menu-container #mobile-menu a .btn:hover, 
+  #header .menu-container #mobile-menu a .btn.active, 
+  #header .menu-container #mobile-menu .btn:hover, 
+  #header .menu-container #mobile-menu .btn.active {
+    background-color: #ffffff;
+    color: #1a1a2e;
+    box-shadow: 0 4px 14px rgba(26, 26, 46, 0.15);
   }
+}
+
+
+.profile-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.profile-trigger {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #1a1a2e;
+  color: #ffffff;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1.5px solid #d4ede5;
+  box-shadow: 0 4px 10px rgba(26, 26, 46, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.profile-trigger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(15, 110, 86, 0.3);
+}
+
+/* Mobile responsive drawer adjustments */
+#mobile-menu .profile-wrapper {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+
+#mobile-menu .profile-trigger {
+  background-color: #ffffff;
+  color: #0f6e56;
+  border-color: #ffffff;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
 }
