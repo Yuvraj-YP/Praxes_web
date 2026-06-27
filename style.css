@@ -1357,7 +1357,7 @@ body {
 }
 
 .subject-item:hover .subject-icon {
-  color: #1a1a2e;
+  color: #ffffff;
 }
 
 .subject-name {
@@ -1377,7 +1377,11 @@ body {
 }
 
 .subject-item:hover .subject-range {
-  color: #1a1a2e;
+  color: #ffffff;
+}
+
+.subject-item:hover .subject-name {
+  color: #ffffff;
 }
 
 .subject-pipe {
