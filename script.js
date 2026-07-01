@@ -1,41 +1,42 @@
-var openOrClose = 0;
-const menuOpenClose = document.querySelector(".menu-open-close");
-const menuImg = document.querySelector(".menuImg");
-
-menuOpenClose.addEventListener("click", () => {
-  if (openOrClose === 0) {
-    menuImg.src = "close.svg";
-    openOrClose = 1; 
-    gsap.to("#mobile-menu", {
-      height: "auto",
-      display: "flex",
-      visibility: "visible",
-      opacity: 1,
-      duration: 0.32,
-    });
-  } else {
-    menuImg.src = "menu.svg";
-    openOrClose = 0;
-    gsap.to("#mobile-menu", {
-      height: 0,
-      opacity: 0,
-      duration: 0.28,
-      onComplete: () => {
-        document.querySelector("#mobile-menu").style.display = "none";
-        document.querySelector("#mobile-menu").style.visibility = "hidden";
-      },
-    });
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  initMobileMenuDrawer();
+  evaluateGlobalAuthState();
+  setupFormSubmitHandlers();
 });
 
+// Fine-tuned clean menu drawer controller mapped from MentorHub logic metrics
+function initMobileMenuDrawer() {
+  const toggleBtn = document.querySelector(".menu-open-close");
+  const menuDrawer = document.querySelector("#mobile-menu");
+
+  if (!toggleBtn || !menuDrawer) return;
+
+  // Toggle open/close on button click
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleBtn.classList.toggle("is-open");
+    menuDrawer.classList.toggle("is-open");
+  });
+
+  // Smart Event Delegation: Automatically close when clicking any inner option link
+  menuDrawer.addEventListener("click", (e) => {
+    if (e.target.closest("a") || e.target.closest(".btn")) {
+      toggleBtn.classList.remove("is-open");
+      menuDrawer.classList.remove("is-open");
+    }
+  });
+}
+
 // Highlight active nav link
-(function () {
-  const page = window.location.pathname.split("/").pop() || "index.html";
+(() => {
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
   document
     .querySelectorAll("#menu a .btn, #mobile-menu a .btn")
     .forEach((btn) => {
       const href = btn.closest("a").getAttribute("href");
-      if (href === page) btn.classList.add("active");
+      if (href === currentPage) {
+        btn.classList.add("active");
+      }
     });
 })();
 
@@ -55,9 +56,8 @@ function togglePwd(fieldId, btn) {
 function checkStrength(val) {
   const bars = [bar1, bar2, bar3, bar4];
   const label = document.getElementById("strength-label");
-  const classes = ["", "weak", "medium", "medium", "strong"];
+  if (!label) return;
 
-  // Reset
   bars.forEach((b) => {
     b.className = "strength-bar";
   });
@@ -76,8 +76,7 @@ function checkStrength(val) {
   }
 
   label.textContent = val.length ? labels[score] : "";
-  label.style.color =
-    score === 4 ? "#0f6e56" : score >= 2 ? "#f59e0b" : "#ef4444";
+  label.style.color = score === 4 ? "#0f6e56" : score >= 2 ? "#f59e0b" : "#ef4444";
 }
 
 /* ---- Confirm password match hint ---- */
@@ -113,26 +112,14 @@ function handleRegister() {
   }
 }
 
-/* =========================================================================
-   AUTHENTICATION PROFILE STATE MACHINE ENGINE
-   ========================================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-  evaluateGlobalAuthState();
-  setupFormSubmitHandlers();
-});
-
-// Checks browser cache state to structurally update both desktop and mobile headers
+/* ---- Checks browser cache state to structurally update layout blocks visibility states ---- */
 function evaluateGlobalAuthState() {
   const isLoggedIn = localStorage.getItem("praxes_user_logged_in") === "true";
-  
   const guestDesktop = document.getElementById("guest-nav-block");
   const userDesktop = document.getElementById("user-nav-block");
-  
   const guestMobile = document.getElementById("guest-nav-block-mobile");
   const userMobile = document.getElementById("user-nav-block-mobile");
 
-  // 1. Process Desktop Navbar Blocks if present in DOM
   if (guestDesktop && userDesktop) {
     if (isLoggedIn) {
       guestDesktop.classList.add("auth-hidden");
@@ -143,7 +130,6 @@ function evaluateGlobalAuthState() {
     }
   }
 
-  // 2. Process Mobile Menu Drawer Blocks if present in DOM
   if (guestMobile && userMobile) {
     if (isLoggedIn) {
       guestMobile.classList.add("auth-hidden");
@@ -172,7 +158,7 @@ window.addEventListener("click", () => {
   }
 });
 
-// Hooks event handlers to login/registration submit paths to set local storage tokens
+// Hooks event handlers to login/registration submit paths
 function setupFormSubmitHandlers() {
   const loginSubmitBtn = document.getElementById("loginSubmitBtn");
   if (loginSubmitBtn) {
@@ -186,7 +172,6 @@ function setupFormSubmitHandlers() {
       }
 
       localStorage.setItem("praxes_user_logged_in", "true");
-      // alert("Login successful!");
       window.location.href = "index.html";
     });
   }
@@ -195,33 +180,25 @@ function setupFormSubmitHandlers() {
 // Clear token values from cache database and reload state environments
 function simulateLogout() {
   localStorage.removeItem("praxes_user_logged_in");
-  // alert("Logged out successfully.");
   window.location.href = "index.html";
 }
 
-
-// --- Shared Global Scroll-To-Top Script ---
-window.addEventListener('DOMContentLoaded', () => {
-  // 1. Create the button element dynamically so you don't have to write HTML on every page
-  const scrollTopBtn = document.createElement('button');
-  scrollTopBtn.className = 'scroll-top-btn';
+/* ---- Shared Automated Scroll-To-Top Injector Script ---- */
+window.addEventListener("DOMContentLoaded", () => {
+  const scrollTopBtn = document.createElement("button");
+  scrollTopBtn.className = "scroll-top-btn";
   scrollTopBtn.innerHTML = `<img src="scrollup.svg" alt="Scroll Up" style="width: 22px; height: 22px; display: block; margin: auto;" />`;
   document.body.appendChild(scrollTopBtn);
 
-  // 2. Listen for scroll events to show or hide the button smoothly
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-      scrollTopBtn.classList.add('is-visible');
+      scrollTopBtn.classList.add("is-visible");
     } else {
-      scrollTopBtn.classList.remove('is-visible');
+      scrollTopBtn.classList.remove("is-visible");
     }
   });
 
-  // 3. Make the button smoothly scroll all the way up when clicked
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth' // Native browser smooth scrolling acceleration
-    });
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });

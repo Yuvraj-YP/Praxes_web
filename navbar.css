@@ -88,8 +88,7 @@
   text-decoration: none;
 }
 
-#header #menu a .btn, 
-#header #menu .btn {
+#header #menu a .btn, #header #menu .btn {
   background: none;
   border: none;
   font-size: 0.88rem;
@@ -104,14 +103,12 @@
   font-family: "Nunito";
 }
 
-#header #menu a .btn:hover, 
-#header #menu .btn:hover {
+#header #menu a .btn:hover, #header #menu .btn:hover {
   background-color: #a9e3d0;
   color: #1a1a2e;
 }
 
-#header #menu a .btn.active, 
-#header #menu .btn.active {
+#header #menu a .btn.active, #header #menu .btn.active {
   background-color: #0f6e56;
   color: #ffffff;
 }
@@ -123,14 +120,14 @@
   margin-left: 0.5rem;
 }
 
-/* ---- Fallback Hidden on Desktop ---- */
-#mobile-menu, 
-.menu-open-close {
+/* ---- Fallback Defaults Hidden on Desktop Viewports ---- */
+.menu-container #mobile-menu, 
+.menu-container .menu-open-close {
   display: none;
 }
 
 /* =========================================================================
-   📱 MOBILE RESPONSIVE MEDIA BREAKPOINT SYSTEM
+   MOBILE RESPONSIVE MEDIA BREAKPOINT SYSTEM
    ========================================================================= */
 @media (max-width: 750px) {
   #header {
@@ -164,22 +161,33 @@
 
   #header .menu-container .menu-open-close.is-open {
     transform: translateY(-50%) rotate(90deg);
-    background-color: #1a1a2e;
+    background-color: #0f6e56;
   }
 
   #header .menu-container .menu-open-close img {
+    position: absolute;
     height: 55%;
     width: 55%;
     user-select: none;
     -webkit-user-drag: none;
-    transition: filter 0.25s ease;
+    transition: opacity 0.2s ease;
   }
 
-  #header .menu-container .menu-open-close.is-open img {
-    filter: invert(1) brightness(10);
+  #header .menu-container .menu-open-close .menu-icon {
+  opacity: 1;
+  }
+  #header .menu-container .menu-open-close .close-icon {
+    opacity: 0;
   }
 
-  /* ---- Deep Green Theme Glassmorphism Dropdown Drawer ---- */
+  #header .menu-container .menu-open-close.is-open .menu-icon {
+  opacity: 0;
+  }
+  #header .menu-container .menu-open-close.is-open .close-icon {
+    opacity: 1;
+  }
+
+  /* ---- Pure CSS Glassmorphic Sliding Drawer Tray Layout ---- */
   #header .menu-container #mobile-menu {
     position: absolute;
     top: calc(9vh + 8px);
@@ -196,21 +204,23 @@
     border-radius: 16px;
     z-index: 105;
     box-sizing: border-box;
-
+    
     background: rgba(120, 245, 213, 0.333);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(212, 237, 229, 0.25);
     box-shadow: 0 12px 32px rgba(15, 110, 86, 0.25);
-
+    
+    /* Smooth entrance architecture translated from MentorHub layout classes */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-12px) scale(0.98);
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-                visibility 0.3s;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                visibility 0.35s;
   }
 
+  /* Triggers layout unmasking purely when the state class modifier hits */
   #header .menu-container #mobile-menu.is-open {
     opacity: 1;
     visibility: visible;
@@ -239,7 +249,7 @@
     box-sizing: border-box;
   }
 
-  /* ---- Selected / Hovered Black & White High Contrast Actions ---- */
+  /* ---- Selected / Hovered Actions High Contrast Shifts ---- */
   #header .menu-container #mobile-menu a .btn:hover, 
   #header .menu-container #mobile-menu a .btn.active, 
   #header .menu-container #mobile-menu .btn:hover, 
@@ -250,7 +260,7 @@
   }
 }
 
-
+/* Profile components specs matching index layout nodes cleanly */
 .profile-wrapper {
   display: inline-flex;
   align-items: center;
@@ -282,7 +292,6 @@
   box-shadow: 0 6px 16px rgba(15, 110, 86, 0.3);
 }
 
-/* Mobile responsive drawer adjustments */
 #mobile-menu .profile-wrapper {
   width: 100%;
   justify-content: flex-start;
