@@ -4,21 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFormSubmitHandlers();
 });
 
-// Fine-tuned clean menu drawer controller mapped from MentorHub logic metrics
+
 function initMobileMenuDrawer() {
   const toggleBtn = document.querySelector(".menu-open-close");
   const menuDrawer = document.querySelector("#mobile-menu");
 
   if (!toggleBtn || !menuDrawer) return;
 
-  // Toggle open/close on button click
+
   toggleBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     toggleBtn.classList.toggle("is-open");
     menuDrawer.classList.toggle("is-open");
   });
 
-  // Smart Event Delegation: Automatically close when clicking any inner option link
+
   menuDrawer.addEventListener("click", (e) => {
     if (e.target.closest("a") || e.target.closest(".btn")) {
       toggleBtn.classList.remove("is-open");
