@@ -1596,3 +1596,132 @@ body {
   opacity: 1;
   visibility: visible;
 }
+
+
+/* ---- Refund Policy Content Structure ---- */
+.refund-section {
+  padding: 5rem 2rem;
+  background-color: var(--page-color);
+}
+
+.refund-container {
+  max-width: 850px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 3.5rem 3rem;
+  border-radius: 20px;
+  border: 1.5px solid #e8edf2;
+  box-shadow: 0 4px 24px rgba(26, 26, 46, 0.04);
+}
+
+.refund-container p {
+  font-size: 1rem;
+  color: #4a4a6a;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+  font-weight: 500;
+  text-align: justify;
+}
+
+.refund-container p:last-child {
+  margin-bottom: 0;
+}
+
+.refund-container p strong {
+  color: #1a1a2e;
+  font-weight: 700;
+}
+
+.refund-container a {
+  color: #0f6e56;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.refund-container a:hover {
+  color: #39a07e;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .refund-section {
+    padding: 3rem 1rem;
+  }
+  .refund-container {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ---- Terms & Conditions Content Framework ---- */
+.terms-section {
+  padding: 5rem 2rem;
+  background-color: var(--page-color);
+}
+
+.terms-container {
+  max-width: 850px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 3.5rem 3rem;
+  border-radius: 20px;
+  border: 1.5px solid #e8edf2;
+  box-shadow: 0 4px 24px rgba(26, 26, 46, 0.04);
+}
+
+.terms-container h3 {
+  font-size: 1.2rem;
+  color: #1a1a2e;
+  font-weight: 800;
+  margin: 2rem 0 0.8rem;
+  letter-spacing: -0.3px;
+}
+
+.terms-container p {
+  font-size: 1rem;
+  color: #4a4a6a;
+  line-height: 1.8;
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+  text-align: justify;
+}
+
+.terms-container ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.terms-container li {
+  font-size: 0.98rem;
+  color: #4a4a6a;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.terms-container strong {
+  color: #1a1a2e;
+  font-weight: 700;
+}
+
+.terms-container a {
+  color: #0f6e56;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.terms-container a:hover {
+  color: #39a07e;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .terms-section {
+    padding: 3rem 1rem;
+  }
+  .terms-container {
+    padding: 2rem 1.5rem;
+  }
+}
