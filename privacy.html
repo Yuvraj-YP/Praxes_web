@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — Praxes</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    
+    <!-- Header Block -->
+    <header id="header">
+      <section id="logo">
+        <img src="logo1.png" alt="Praxes Logo" />
+        <div class="logo-name">
+          <a href="index.html">
+            <h3>PRAXES</h3>
+            <h5>Practice. Test.</h5>
+            <h5>Mentor. Succeed.</h5>
+          </a>
+        </div>
+      </section>
+      <div class="menu-container">
+        <div class="menu-open-close">
+          <img class="menuImg menu-icon" src="menu.svg" alt="Open Menu" />
+          <img class="menuImg close-icon" src="close.svg" alt="Close Menu" />
+        </div>
+        <section id="mobile-menu">
+          <div id="user-nav-block-mobile" class="auth-hidden">
+            <div class="mobile-profile-header">
+              <div class="profile-trigger">👤</div>
+              <span>My Dashboard</span>
+            </div>
+            <a href="progressTracking.html"><button class="btn">📊 Progress Tracking</button></a>
+            <a href="Badges.html"><button class="btn">📛 My Badges</button></a>
+            <a href="feedback.html"><button class="btn">💬 Send Feedback</button></a>
+            <button class="btn logout-item" onclick="simulateLogout()">🚪 Log Out</button>
+            <div class="dropdown-divider"></div>
+          </div>
+          <div id="guest-nav-block-mobile">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+        </section>
+        <section id="menu">
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+          <div id="guest-nav-block">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+          <div id="user-nav-block" class="profile-wrapper auth-hidden">
+            <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
+            <div class="dropdown-menu" id="profileDropdownCard">
+              <a href="progressTracking.html" class="dropdown-item">📊 Progress Tracking</a>
+              <a href="Badges.html" class="dropdown-item">📛 My Badges</a>
+              <a href="feedback.html" class="dropdown-item">💬 Send Feedback</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <!-- Main Content Block -->
+    <main id="main">
+      <section class="page1">
+        <div class="hero">
+          <div class="hero__content">
+            <div class="hero__badge">Legal Policies</div>
+            <h1 class="hero__title">Privacy <span>Policy</span></h1>
+            <p class="hero__subtitle">
+              PRAXES is a leading ed-tech company, incorporated in India, for imparting learning and practicing. We value your trust. In order to honour that trust, "PRAXES" adheres to ethical standards in gathering, using, and safeguarding any information you provide to us.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="helps-section">
+        <div class="helps-grid">
+          <div class="helps-card">
+            <span class="helps-audience-tag">Scope of Policy</span>
+            <h3>Governance &amp; Overview</h3>
+            <p>
+              This Privacy Policy governs your use of the (a) website – 'https://www.praxes.in/' and (b) the other associated applications, products, websites, and services managed or offered by the Company – like practice papers or teaching online. Please read this Privacy Policy carefully before using the Application, Website, or availing any of our services and products, along with the Terms of Use ("ToU" or "Terms") provided on the web Application.
+            </p>
+          </div>
+
+          <div class="helps-card">
+            <span class="helps-audience-tag">Acceptance</span>
+            <h3>Consent &amp; Terms Agreement</h3>
+            <p>
+              Your use of the Web Application, and/or services in connection with the web Application, or any of our products or any registrations made with us through any mode or usage of any of our products, including SD cards, tablets or any other storage or transmitting device shall signify your acceptance of this Privacy Policy and your agreement to be legally bound by the same in respect of our collection and usage of your Information (as detailed below).
+            </p>
+          </div>
+
+          <div class="helps-card">
+            <span class="helps-audience-tag">Restrictions</span>
+            <h3>Usage Disclaimers</h3>
+            <p>
+              If you do not agree with the terms of this Privacy Policy, please do not use the Website, Application, or avail any of our Services. All capitalized and other defined terms used but not defined herein shall have the meaning as assigned to it under the ToU.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Block -->
+    <footer id="footer">
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <div class="contacts">
+          <div class="contact-details">
+            <img src="phone.svg" alt="Phone" />
+            <div class="contact">
+              <h4 class="contact-title">Phone</h4>
+              <h5>+91 62602 03132</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="mail.svg" alt="Email" />
+            <div class="contact">
+              <h4 class="contact-title">Email</h4>
+              <h5>praxes2020@gmail.com</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="map.svg" alt="Address" />
+            <div class="contact">
+              <h4 class="contact-title">Address</h4>
+              <h5>1st floor, Srishti's Palazzo commercial complex, St. Xavier School Road, Raipur, Chhattisgarh</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-platforms">
+        <h3>Our Platforms</h3>
+        <div class="platform"><img src="Facebook.svg" alt="Facebook" /><h4>Facebook</h4></div>
+        <div class="platform"><img src="instagram.svg" alt="Instagram" /><h4>Instagram</h4></div>
+        <div class="platform"><img src="LinkedIn.svg" alt="LinkedIn" /><h4>LinkedIn</h4></div>
+      </div>
+      <div class="what-offer">
+        <h3>Important Links</h3>
+        <div class="offers">
+          <a href="disclaimer.html"><h4>Disclaimer</h4></a>
+<a href="privacy.html"><h4>Privacy</h4></a>
+          <a href="refund_policy.html"><h4>Refund Policy</h4></a>
+          <a href="terms_and_condition.html"><h4>Terms and Conditions</h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
