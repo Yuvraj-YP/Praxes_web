@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Nunito";
+  src: url(Nunito-VariableFont_wght.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+#main {
+  background-color: #f5f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.page2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 4rem 1.5rem;
+}
+
+.checkout-cards-wrapper {
+  width: 100%;
+  max-width: 440px;
+  margin: 3rem auto;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.payment-card-box {
+  background: rgba(255, 255, 255, 0.179);
+  border-radius: 32px;
+  width: 100%;
+  margin-top: -1.7rem;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0 0 0;
+  box-shadow: 
+    0 10px 40px 2px rgba(0, 0, 0, 0.07), 
+    0 30px 70px 10px rgba(0, 0, 0, 0.18);
+}
+
+.payment-price-header {
+  position: absolute;
+  top: -18px;
+  left: 2.5rem;
+  z-index: 10;
+  background: rgb(15, 110, 86);
+  padding: 0.45rem 1.5rem;
+  border-radius: 50px;
+  border: 1.5px solid rgba(56, 161, 105, 0.3);
+  box-sizing: border-box;
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.15), 
+    0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.payment-price-header h4 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.payment-card-title {
+  font-size: 1.6rem;
+  color: #1d1d1f;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin: 2rem 2.5rem 0.6rem 2.5rem;
+  text-align: left;
+}
+
+.payment-card-description {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: #515154;
+  padding: 0 2.5rem 2.5rem 2.5rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: left;
+}
+
+.checkout-btn-container {
+  padding: 0 2.5rem 2.5rem 2.5rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.payment-pay-btn {
+  width: auto;
+  min-width: 140px;
+  padding: 1.05rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  border: none;
+  cursor: pointer;
+  background-color: #0f6e56;
+  color: #ffffff;
+  border-radius: 50px;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.15), 
+    0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.payment-pay-btn:hover {
+  background-color: #0b5442;
+  box-shadow: 
+    0 6px 14px rgba(0, 0, 0, 0.2), 
+    0 16px 32px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.payment-pay-btn:active {
+  transform: scale(0.97) translateY(0);
+}
+
+@media (max-width: 480px) {
+  .page2 {
+    padding: 2.5rem 1rem;
+  }
+
+  .checkout-cards-wrapper {
+    margin: 2rem auto 1rem;
+  }
+
+  .payment-card-box {
+    border-radius: 24px;
+    padding-top: 1rem;
+  }
+
+  .payment-price-header {
+    left: 1.5rem;
+    padding: 0.4rem 1.2rem;
+  }
+
+  .payment-card-title {
+    font-size: 1.35rem;
+    margin: 1.8rem 1.5rem 0.5rem 1.5rem;
+  }
+
+  .payment-card-description {
+    font-size: 0.92rem;
+    padding: 0 1.5rem 2rem 1.5rem;
+  }
+
+  .checkout-btn-container {
+    padding: 0 1.5rem 2rem 1.5rem;
+  }
+
+  .payment-pay-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

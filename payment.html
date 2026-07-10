@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proceed to Payment — Praxes</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="payment.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    
+    <header id="header">
+      <section id="logo">
+        <img src="logo1.png" alt="Praxes Logo" />
+        <div class="logo-name">
+          <a href="index.html">
+            <h3>PRAXES</h3>
+            <h5>Practice. Test.</h5>
+            <h5>Mentor. Succeed.</h5>
+          </a>
+        </div>
+      </section>
+      <div class="menu-container">
+        <div class="menu-open-close">
+          <img class="menuImg menu-icon" src="menu.svg" alt="Open Menu" />
+          <img class="menuImg close-icon" src="close.svg" alt="Close Menu" />
+        </div>
+        <section id="mobile-menu">
+          <div id="user-nav-block-mobile" class="auth-hidden">
+            <div class="mobile-profile-header">
+              <div class="profile-trigger">👤</div>
+              <span>My Dashboard</span>
+            </div>
+            <a href="progressTracking.html"><button class="btn">📊 Progress Tracking</button></a>
+            <a href="Badges.html"><button class="btn">📛 My Badges</button></a>
+            <a href="feedback.html"><button class="btn">💬 Send Feedback</button></a>
+            <button class="btn logout-item" onclick="simulateLogout()">🚪 Log Out</button>
+            <div class="dropdown-divider"></div>
+          </div>
+          <div id="guest-nav-block-mobile">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+        </section>
+        <section id="menu">
+          <a href="index.html"><button class="btn">HOME</button></a>
+          <a href="classes.html"><button class="btn">CLASSES</button></a>
+          <a href="about.html"><button class="btn">GET MENTOR</button></a>
+          <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
+          <div id="guest-nav-block">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+          <div id="user-nav-block" class="profile-wrapper auth-hidden">
+            <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
+            <div class="dropdown-menu" id="profileDropdownCard">
+              <a href="progressTracking.html" class="dropdown-item">📊 Progress Tracking</a>
+              <a href="Badges.html" class="dropdown-item">📛 My Badges</a>
+              <a href="feedback.html" class="dropdown-item">💬 Send Feedback</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page2">
+        <div class="section-header">
+          <span class="section-label">Checkout</span>
+          <h2 class="section-title">Review Your <span>Subscription</span></h2>
+          <div class="section-underline"></div>
+        </div>
+
+        <div class="checkout-cards-wrapper">
+          <div class="payment-card-box">
+            <div class="payment-price-header">
+              <h4 id="payment-dynamic-price">Loading Price...</h4>
+            </div>
+            <h2 class="payment-card-title" id="payment-dynamic-title">Loading Plan...</h2>
+            <h4 class="payment-card-description" id="payment-dynamic-desc">
+              Please wait while we fetch your selection details.
+            </h4>
+            <div class="checkout-btn-container">
+              <button class="payment-pay-btn checkout-btn-full" onclick="alert('Proceeding with payment simulation...')">Pay Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <div class="contacts">
+          <div class="contact-details">
+            <img src="phone.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Phone</h4>
+              <h5>+91 62602 03132</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="mail.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Email</h4>
+              <h5>praxes24@gmail.com</h5>
+            </div>
+          </div>
+          <div class="contact-details">
+            <img src="map.svg" alt="" />
+            <div class="contact">
+              <h4 class="contact-title">Address</h4>
+              <h5>1st floor, Srishti's Palazzo commercial complex, St. Xavier School Road, Raipur, Chhattisgarh</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-platforms">
+        <h3>Our Platforms</h3>
+        <div class="platform"><img src="Facebook.svg" alt="" /><h4>Facebook</h4></div>
+        <div class="platform"><img src="instagram.svg" alt="" /><h4>Instagram</h4></div>
+        <div class="platform"><img src="LinkedIn.svg" alt="" /><h4>LinkedIn</h4></div>
+      </div>
+      <div class="what-offer">
+        <h3>Important Links</h3>
+        <div class="offers">
+          <a href="disclaimer.html"><h4>Disclaimer</h4></a>
+          <a href="privacy.html"><h4>Privacy</h4></a>
+          <a href="refund_policy.html"><h4>Refund Policy</h4></a>
+          <a href="terms_and_condition.html"><h4>Terms and Conditions</h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const plansDataset = {
+          1: {
+            title: "Test Series",
+            price: "INR 99 /-",
+            desc: "Mock Test / Daily Practice Tests / Weekly Performance Report"
+          },
+          2: {
+            title: "All Subjects (Monthly Plan)",
+            price: "INR 350 /-",
+            desc: "All subjects monthly plan will provide you Unlimited practice questions, Mock Tests, and a Complete syllabus test series."
+          },
+          3: {
+            title: "All Subjects (Yearly Plan)",
+            price: "INR 999 /-",
+            desc: "Improve your grades with PRAXES yearly plan: Unlimited Practice Questions, Time Bounded Tests, Notes, and Weekly & Monthly Reports."
+          },
+          4: {
+            title: "Any One Subject",
+            price: "INR 200 /-",
+            desc: "Unlimited Practice / Topic wise test / Test Series (complete syllabus)."
+          }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const planId = urlParams.get("id");
+        
+        const titleEl = document.getElementById("payment-dynamic-title");
+        const priceEl = document.getElementById("payment-dynamic-price");
+        const descEl = document.getElementById("payment-dynamic-desc");
+
+        if (planId && plansDataset[planId]) {
+          titleEl.textContent = plansDataset[planId].title;
+          priceEl.textContent = plansDataset[planId].price;
+          descEl.textContent = plansDataset[planId].desc;
+        } else {
+          titleEl.textContent = "Plan Not Found";
+          priceEl.textContent = "INR 0 /-";
+          descEl.textContent = "Please return to the subscriptions tab and re-select a structural plan package.";
+        }
+      });
+    </script>
+  </body>
+</html>
