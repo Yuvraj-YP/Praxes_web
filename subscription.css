@@ -315,6 +315,7 @@ html, body {
 .sub-join-btn {
   width: 100%;
   padding: 1rem;
+  text-decoration: none;
   background: #0f6e56;
   color: white;
   border: none;
