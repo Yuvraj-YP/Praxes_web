@@ -1,13 +1,18 @@
-/* ========================================================================== 
-   Praxes Hero Landing Entry Animation Suite 
-   ========================================================================== */
-
-/* --- Font Initialization Setup --- */
 @font-face {
   font-family: "Nunito";
   src: url(Nunito-VariableFont_wght.ttf) format("truetype");
   font-weight: 600;
   font-style: normal;
+}
+
+.hero__badge,
+.hero__title,
+.hero__subtitle {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  isolation: isolate;
 }
 
 .hero__badge {
@@ -49,19 +54,13 @@
   opacity: 0.5;
   transform: scale(0.001) rotate(-10deg);
   filter: drop-shadow(0 0 0 rgba(49, 151, 149, 0));
-  
   animation: 
     bulbAssemble 1s cubic-bezier(0.25, 1, 0.5, 1) forwards, 
     bulbGlow 3s ease-in-out infinite alternate,
     bulbFloat 4s ease-in-out infinite alternate;
   animation-delay: 0.3s, 1.3s, 1.3s;
-  
   will-change: transform, filter;
 }
-
-/* ========================================================================== 
-   Animation Keyframe Chronologies 
-   ========================================================================== */
 
 @keyframes heroTextReveal {
   0% {
@@ -70,7 +69,7 @@
   }
   100% {
     opacity: 1;
-    transform: translate(0);
+    transform: translate3d(0, 0, 0);
     filter: blur(0);
   }
 }
