@@ -25,20 +25,24 @@
         <div class="menu-open-close">
           <img class="menuImg menu-icon" src="menu.svg" alt="Open Menu" />
           <img class="menuImg close-icon" src="close.svg" alt="Close Menu" />
-        </div>  
-        
+        </div>        
         <section id="mobile-menu">
-          <div id="user-nav-block-mobile" style="width: 100%;">
+          <div id="user-nav-block-mobile" class="auth-hidden" style="width: 100%;">
             <div class="mobile-profile-header">
               <div class="profile-trigger" style="cursor: default;">👤</div>
               <span style="font-weight: 700; color: #2d3748; font-size: 0.95rem;">My Dashboard</span>
             </div>
-            <a href="progressTracking.html"><button class="btn active" style="text-align: left; padding-left: 1.5rem; width: 100%;">📊 Progress Tracking</button></a>
+            <a href="progressTracking.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📊 Progress Tracking</button></a>
             <a href="Badges.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">📛 My Badges</button></a>
-            <a href="feedback.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">💬 Send Feedback</button></a>
+            <a href="meetings.html"><button class="btn" style="text-align: left; padding-left: 1.5rem; width: 100%;">💬 Meetings</button></a>
             <button class="btn logout-item" onclick="simulateLogout()" style="text-align: left; padding-left: 1.5rem; width: 100%; font-weight: 700;">🚪 Log Out</button>
             <div class="dropdown-divider" style="margin: 0.5rem 0;"></div>
           </div>
+
+          <div id="guest-nav-block-mobile" style="width: 100%; display: flex; flex-direction: column;">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
           <a href="index.html"><button class="btn">HOME</button></a>
           <a href="classes.html"><button class="btn">CLASSES</button></a>
           <a href="about.html"><button class="btn">GET MENTOR</button></a>
@@ -50,12 +54,17 @@
           <a href="classes.html"><button class="btn">CLASSES</button></a>
           <a href="about.html"><button class="btn">GET MENTOR</button></a>
           <a href="subscription.html"><button class="btn">SUBSCRIPTIONS</button></a>
-          <div id="user-nav-block" class="profile-wrapper">
+          
+          <div id="guest-nav-block">
+            <a href="login.html"><button class="btn">LOGIN</button></a>
+          </div>
+
+          <div id="user-nav-block" class="profile-wrapper auth-hidden">
             <div class="profile-trigger" onclick="toggleProfileDropdown(event)">👤</div>
             <div class="dropdown-menu" id="profileDropdownCard">
-              <a href="progressTracking.html" class="dropdown-item active">📊 Progress Tracking</a>
+              <a href="progressTracking.html" class="dropdown-item">📊 Progress Tracking</a>
               <a href="Badges.html" class="dropdown-item">📛 My Badges</a>
-              <a href="feedback.html" class="dropdown-item">💬 Send Feedback</a>
+              <a href="meetings.html" class="dropdown-item">💬 Meetings</a>
               <div class="dropdown-divider"></div>
               <a href="#" class="dropdown-item logout-item" onclick="simulateLogout()">🚪 Log Out</a>
             </div>
@@ -74,7 +83,6 @@
       </section>
 
       <div class="analytics-container">
-        
         <div class="student-profile-bar">
           <div class="profile-meta-item"><span>Student Name</span><h3>Yuvraj Patel</h3></div>
           <div class="profile-meta-item"><span>Enrolled Bracket</span><h3>Class X (Standard Grid)</h3></div>
@@ -85,54 +93,156 @@
         <div class="mentor-remarks-static-card">
           <h4>Mentor Remarks &amp; Feedback</h4>
           <p id="dynamicMentorRemarksText">
-            "Yuvraj exhibits outstanding conceptual understanding in core Mathematics and Physics tracks. Consistency in January's daily modules has been exceptional. Recommend allocating additional focus to English verbal test series to boost overall cumulative metrics."
+            "Yuvraj exhibits outstanding conceptual understanding in core Mathematics and Physics tracks. Consistency in daily modules has been exceptional. Recommend allocating additional focus to English verbal test series to boost overall cumulative metrics."
           </p>
         </div>
 
         <div class="analytics-tabs-nav">
-          <button class="tab-trigger-btn active-tab" onclick="switchAnalyticsTab(event, 'tabPerformance')">📈 Test Performance</button>
+          <button class="tab-trigger-btn active-tab" onclick="switchAnalyticsTab(event, 'tabReports')">📝 Reports</button>
+          <button class="tab-trigger-btn" onclick="switchAnalyticsTab(event, 'tabPerformance')">📈 Test Performance</button>
           <button class="tab-trigger-btn" onclick="switchAnalyticsTab(event, 'tabCalendar')">📅 Practice Calendar</button>
           <button class="tab-trigger-btn" onclick="switchAnalyticsTab(event, 'tabAttendance')">📊 Weekly Attendance</button>
         </div>
 
-        <div id="tabPerformance" class="analytics-tab-panel active-panel">
+        <!-- Tab 1: Reports Panel -->
+        <div id="tabReports" class="analytics-tab-panel active-panel">
           <div class="dashboard-card-section">
-            <h2>Subject Test Performance Tracking</h2>
-            <div class="multi-subject-chart-deck">
-              <div class="subject-chart-row-item">
-                <div class="subject-chart-info"><h4>Mathematics Columns</h4><span class="legend-indicator math-indicator">Math</span></div>
-                <div class="chart-axis-container-bars">
-                  <div class="y-axis-labels"><div>Max</div><div>75%</div><div>50%</div><div>25%</div><div>0%</div></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar math-pillar" style="height: 82%;"><div class="pillar-bar-value">82</div></div><span class="node-x-label">Test 1</span></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar math-pillar" style="height: 70%;"><div class="pillar-bar-value">35</div></div><span class="node-x-label">Test 2</span></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar math-pillar" style="height: 90%;"><div class="pillar-bar-value">90</div></div><span class="node-x-label">Test 3</span></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar math-pillar" style="height: 84%;"><div class="pillar-bar-value">42</div></div><span class="node-x-label">Test 4</span></div>
-                </div>
-              </div>
-              <div class="subject-chart-row-item">
-                <div class="subject-chart-info"><h4>Science Columns</h4><span class="legend-indicator science-indicator">Science</span></div>
-                <div class="chart-axis-container-bars">
-                  <div class="y-axis-labels"><div>Max</div><div>75%</div><div>50%</div><div>25%</div><div>0%</div></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar science-pillar" style="height: 75%;"><div class="pillar-bar-value">45</div></div><span class="node-x-label">Test 1</span></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar science-pillar" style="height: 92%;"><div class="pillar-bar-value">92</div></div><span class="node-x-label">Test 2</span></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar science-pillar" style="height: 90%;"><div class="pillar-bar-value">54</div></div><span class="node-x-label">Test 3</span></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar science-pillar" style="height: 87%;"><div class="pillar-bar-value">70</div></div><span class="node-x-label">Test 4</span></div>
-                </div>
-              </div>
-              <div class="subject-chart-row-item">
-                <div class="subject-chart-info"><h4>English Columns</h4><span class="legend-indicator english-indicator">English</span></div>
-                <div class="chart-axis-container-bars">
-                  <div class="y-axis-labels"><div>Max</div><div>75%</div><div>50%</div><div>25%</div><div>0%</div></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar english-pillar" style="height: 86%;"><div class="pillar-bar-value">78</div></div><span class="node-x-label">Test 1</span></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar english-pillar" style="height: 85%;"><div class="pillar-bar-value">85</div></div><span class="node-x-label">Test 2</span></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar english-pillar" style="height: 80%;"><div class="pillar-bar-value">40</div></div><span class="node-x-label">Test 3</span></div>
-                  <div class="chart-bar-column-group"><div class="chart-pillar-bar english-pillar" style="height: 88%;"><div class="pillar-bar-value">88</div></div><span class="node-x-label">Test 4</span></div>
-                </div>
-              </div>
+            <h2>Active Test Progress Summary</h2>
+            <div class="reports-table-wrapper">
+              <table class="reports-data-table">
+                <thead>
+                  <tr>
+                    <th>S.No.</th>
+                    <th>Test Name</th>
+                    <th class="actions-head">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="col-sno">1</td>
+                    <td class="col-name">Mathematics — Quadratic Equations Diagnostic Module</td>
+                    <td class="col-actions">
+                      <button class="btn-continue-test" onclick="alert('Redirecting to secure test window...')">
+                        Continue Test
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-sno">2</td>
+                    <td class="col-name">Science — Light Reflection &amp; Refraction Evaluation</td>
+                    <td class="col-actions">
+                      <button class="btn-continue-test" onclick="alert('Redirecting to secure test window...')">
+                        Continue Test
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-sno">3</td>
+                    <td class="col-name">English — Complex Subject-Verb Agreement Track</td>
+                    <td class="col-actions">
+                      <button class="btn-continue-test" onclick="alert('Redirecting to secure test window...')">
+                        Continue Test
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
 
+        <!-- Tab 2: Performance Panel with Controls Outside the Shaded Card -->
+        <div id="tabPerformance" class="analytics-tab-panel">
+          <div class="dashboard-card-section">
+            <h2>Subject Test Performance Tracking</h2>
+            <div class="multi-subject-chart-deck">
+              
+              <!-- Math Chart Block -->
+              <div class="subject-chart-wrapper">
+                <div class="subject-chart-header-outside">
+                  <div class="subject-title-wrap">
+                    <h4>Mathematics Columns</h4>
+                    <span class="legend-indicator math-indicator">Math Slate</span>
+                  </div>
+                  <div class="chart-controls">
+                    <button class="chart-nav-btn" id="mathPrevBtn" onclick="navigateSubjectPage('math', -1)">◀</button>
+                    <span class="slider-control-page-indicator" id="mathPageIndicator">1 / 1</span>
+                    <button class="chart-nav-btn" id="mathNextBtn" onclick="navigateSubjectPage('math', 1)">▶</button>
+                  </div>
+                </div>
+                <div class="subject-chart-row-item">
+                  <div class="chart-axis-container-bars">
+                    <div class="y-axis-labels">
+                      <div>Max</div>
+                      <div>75%</div>
+                      <div>50%</div>
+                      <div>25%</div>
+                      <div>0%</div>
+                    </div>
+                    <div class="chart-bars-stage" id="mathBarsStage"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Science Chart Block -->
+              <div class="subject-chart-wrapper">
+                <div class="subject-chart-header-outside">
+                  <div class="subject-title-wrap">
+                    <h4>Science Columns</h4>
+                    <span class="legend-indicator science-indicator">Science Mint</span>
+                  </div>
+                  <div class="chart-controls">
+                    <button class="chart-nav-btn" id="sciencePrevBtn" onclick="navigateSubjectPage('science', -1)">◀</button>
+                    <span class="slider-control-page-indicator" id="sciencePageIndicator">1 / 1</span>
+                    <button class="chart-nav-btn" id="scienceNextBtn" onclick="navigateSubjectPage('science', 1)">▶</button>
+                  </div>
+                </div>
+                <div class="subject-chart-row-item">
+                  <div class="chart-axis-container-bars">
+                    <div class="y-axis-labels">
+                      <div>Max</div>
+                      <div>75%</div>
+                      <div>50%</div>
+                      <div>25%</div>
+                      <div>0%</div>
+                    </div>
+                    <div class="chart-bars-stage" id="scienceBarsStage"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- English Chart Block -->
+              <div class="subject-chart-wrapper">
+                <div class="subject-chart-header-outside">
+                  <div class="subject-title-wrap">
+                    <h4>English Columns</h4>
+                    <span class="legend-indicator english-indicator">English Sky</span>
+                  </div>
+                  <div class="chart-controls">
+                    <button class="chart-nav-btn" id="englishPrevBtn" onclick="navigateSubjectPage('english', -1)">◀</button>
+                    <span class="slider-control-page-indicator" id="englishPageIndicator">1 / 1</span>
+                    <button class="chart-nav-btn" id="englishNextBtn" onclick="navigateSubjectPage('english', 1)">▶</button>
+                  </div>
+                </div>
+                <div class="subject-chart-row-item">
+                  <div class="chart-axis-container-bars">
+                    <div class="y-axis-labels">
+                      <div>Max</div>
+                      <div>75%</div>
+                      <div>50%</div>
+                      <div>25%</div>
+                      <div>0%</div>
+                    </div>
+                    <div class="chart-bars-stage" id="englishBarsStage"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Calendar Panel -->
         <div id="tabCalendar" class="analytics-tab-panel">
           <div class="dashboard-card-section">
             <div class="calendar-scroller-header">
@@ -145,14 +255,12 @@
                 <button class="scroll-nav-btn" onclick="scrollMonthStep(1)">▶</button>
               </div>
             </div>
-
             <div class="mini-calendar-wrapper-box">
               <div id="calendarGridContent"></div>
               <div id="emptyMonthNotice" class="empty-month-notice-box">
                 ⚠️ You have not practiced in this month.
               </div>
             </div>
-
             <div class="activity-legend">
               <span>Less Practice</span>
               <div class="activity-cell"></div>
@@ -165,6 +273,7 @@
           </div>
         </div>
 
+        <!-- Tab 4: Attendance Panel -->
         <div id="tabAttendance" class="analytics-tab-panel">
           <div class="dashboard-card-section">
             <h2>Monthly Attendance Matrix (Days Attended Per Week)</h2>
@@ -201,23 +310,136 @@
             <a href="privacy.html"><h4>Privacy</h4></a>
             <a href="refund_policy.html"><h4>Refund Policy</h4></a>
             <a href="terms_and_condition.html"><h4>Terms and Conditions</h4></a>
+            <a href="feedback.html"><h4>Send Feedback</h4></a>
           </div>
         </div>
       </footer>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
     <script>
       function switchAnalyticsTab(tabEvent, targetPanelId) {
         const panelsList = document.querySelectorAll('.analytics-tab-panel');
         const triggerBtns = document.querySelectorAll('.tab-trigger-btn');
-        
         panelsList.forEach(panel => panel.classList.remove('active-panel'));
         triggerBtns.forEach(btn => btn.classList.remove('active-tab'));
-        
         document.getElementById(targetPanelId).classList.add('active-panel');
         tabEvent.currentTarget.classList.add('active-tab');
+      }
+
+      const subjectPerformanceData = {
+        math: {
+          pillarClass: 'math-pillar',
+          stageId: 'mathBarsStage',
+          pageIndicatorId: 'mathPageIndicator',
+          prevBtnId: 'mathPrevBtn',
+          nextBtnId: 'mathNextBtn',
+          currentPage: 0,
+          tests: [
+            { name: "Real Numbers", score: 82, percentage: 82 },
+            { name: "Polynomials", score: 35, percentage: 70 },
+            { name: "Linear Equations", score: 90, percentage: 90 },
+            { name: "Quadratic Equations", score: 42, percentage: 84 },
+            { name: "Arithmetic Progressions", score: 78, percentage: 78 },
+            { name: "Triangles", score: 88, percentage: 88 },
+            { name: "Coordinate Geometry", score: 65, percentage: 65 },
+            { name: "Trigonometry", score: 95, percentage: 95 },
+            { name: "Circles", score: 72, percentage: 72 },
+            { name: "Statistics", score: 85, percentage: 85 }
+          ]
+        },
+        science: {
+          pillarClass: 'science-pillar',
+          stageId: 'scienceBarsStage',
+          pageIndicatorId: 'sciencePageIndicator',
+          prevBtnId: 'sciencePrevBtn',
+          nextBtnId: 'scienceNextBtn',
+          currentPage: 0,
+          tests: [
+            { name: "Chemical Reactions", score: 45, percentage: 75 },
+            { name: "Acids, Bases & Salts", score: 92, percentage: 92 },
+            { name: "Metals & Non-metals", score: 54, percentage: 90 },
+            { name: "Life Processes", score: 70, percentage: 87 },
+            { name: "Control & Coordination", score: 80, percentage: 80 },
+            { name: "Light Reflection", score: 95, percentage: 95 },
+            { name: "Human Eye", score: 60, percentage: 60 },
+            { name: "Electricity", score: 88, percentage: 88 }
+          ]
+        },
+        english: {
+          pillarClass: 'english-pillar',
+          stageId: 'englishBarsStage',
+          pageIndicatorId: 'englishPageIndicator',
+          prevBtnId: 'englishPrevBtn',
+          nextBtnId: 'englishNextBtn',
+          currentPage: 0,
+          tests: [
+            { name: "A Letter to God", score: 78, percentage: 86 },
+            { name: "Nelson Mandela", score: 85, percentage: 85 },
+            { name: "Two Stories about Flying", score: 40, percentage: 80 },
+            { name: "From the Diary of Anne Frank", score: 88, percentage: 88 },
+            { name: "Glimpses of India", score: 92, percentage: 92 },
+            { name: "Madam Rides the Bus", score: 75, percentage: 75 }
+          ]
+        }
+      };
+
+      const BATCH_SIZE = 4;
+
+      function renderSubjectBarChart(subjectKey) {
+        const config = subjectPerformanceData[subjectKey];
+        const stage = document.getElementById(config.stageId);
+        const pageIndicator = document.getElementById(config.pageIndicatorId);
+        const prevBtn = document.getElementById(config.prevBtnId);
+        const nextBtn = document.getElementById(config.nextBtnId);
+
+        const totalPages = Math.ceil(config.tests.length / BATCH_SIZE) || 1;
+        const startIndex = config.currentPage * BATCH_SIZE;
+        const currentBatch = config.tests.slice(startIndex, startIndex + BATCH_SIZE);
+
+        stage.innerHTML = '';
+
+        currentBatch.forEach(item => {
+          const colGroup = document.createElement('div');
+          colGroup.className = 'chart-bar-column-group';
+
+          colGroup.innerHTML = `
+            <div class="chart-pillar-bar ${config.pillarClass}" style="height: ${item.percentage}%;">
+              <div class="pillar-bar-value">${item.score}</div>
+            </div>
+            <span class="node-x-label truncate-text" title="${item.name}">${item.name}</span>
+          `;
+          stage.appendChild(colGroup);
+        });
+
+        const emptySlots = BATCH_SIZE - currentBatch.length;
+        for (let i = 0; i < emptySlots; i++) {
+          const emptyCol = document.createElement('div');
+          emptyCol.className = 'chart-bar-column-group empty-slot';
+          stage.appendChild(emptyCol);
+        }
+
+        pageIndicator.innerText = `${config.currentPage + 1} / ${totalPages}`;
+        prevBtn.disabled = config.currentPage === 0;
+        nextBtn.disabled = config.currentPage >= totalPages - 1;
+      }
+
+      function navigateSubjectPage(subjectKey, direction) {
+        const config = subjectPerformanceData[subjectKey];
+        const totalPages = Math.ceil(config.tests.length / BATCH_SIZE);
+        const targetPage = config.currentPage + direction;
+
+        if (targetPage >= 0 && targetPage < totalPages) {
+          config.currentPage = targetPage;
+          renderSubjectBarChart(subjectKey);
+        }
+      }
+
+      function renderAllSubjectCharts() {
+        Object.keys(subjectPerformanceData).forEach(subjectKey => {
+          renderSubjectBarChart(subjectKey);
+        });
       }
 
       const monthsMap2026 = [
@@ -225,7 +447,6 @@
         "July", "August", "September", "October", "November", "December"
       ];
       let activeMonthIndex = 0;
-
       const januaryMockData = [
         { day: 1, stage: 1, mins: 15 }, { day: 2, stage: 2, mins: 45 }, { day: 3, stage: 0, mins: 0 },
         { day: 4, stage: 3, mins: 80 }, { day: 5, stage: 4, mins: 115 }, { day: 6, stage: 1, mins: 20 },
@@ -244,48 +465,40 @@
         const gridContainer = document.getElementById('calendarGridContent');
         const emptyNotice = document.getElementById('emptyMonthNotice');
         const activeMonthName = monthsMap2026[activeMonthIndex];
-
         gridContainer.innerHTML = '';
-        
         if (activeMonthName !== "January") {
           emptyNotice.style.display = 'block';
           return;
         }
-
         emptyNotice.style.display = 'none';
-
         const cellsWrapper = document.createElement('div');
         cellsWrapper.className = 'month-cells-container';
-
         januaryMockData.forEach(item => {
           const cellNode = document.createElement('div');
           cellNode.className = `activity-cell ${item.stage ? 'stage-' + item.stage : ''}`;
           cellNode.innerText = item.day;
-
           const tooltipNode = document.createElement('div');
           tooltipNode.className = 'big-dark-tooltip';
           tooltipNode.innerHTML = `<strong>January ${item.day}, 2026</strong>⏱️ Practice: ${item.mins} Minutes`;
-
           cellNode.appendChild(tooltipNode);
           cellsWrapper.appendChild(cellNode);
         });
-
         gridContainer.appendChild(cellsWrapper);
       }
 
       function scrollMonthStep(directionStep) {
         activeMonthIndex += directionStep;
-
         if (activeMonthIndex < 0) activeMonthIndex = 11;
         if (activeMonthIndex > 11) activeMonthIndex = 0;
-
         const currentTargetName = monthsMap2026[activeMonthIndex];
         document.getElementById('calendarMonthTitleDisplay').innerText = currentTargetName + " 2026";
-
         renderActiveMonthGrid();
       }
 
-      window.addEventListener('DOMContentLoaded', renderActiveMonthGrid);
+      window.addEventListener('DOMContentLoaded', () => {
+        renderAllSubjectCharts();
+        renderActiveMonthGrid();
+      });
     </script>
   </body>
 </html>
